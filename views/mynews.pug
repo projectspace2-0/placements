@@ -1,0 +1,274 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My Calendar
+    link(type='image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    link(href='assets/css/calendar.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    style.
+      @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      * {
+      -webkit-box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -o-box-sizing:border-box;
+      box-sizing:border-box;
+      }
+      html, body {
+      background:#FFFFFF;
+      }
+      .acc-container {
+      width:100%;
+      margin:30px auto 0 auto;
+      -webkit-border-radius:8px;
+      -moz-border-radius:8px;
+      -o-border-radius:8px;
+      border-radius:8px;
+      overflow:hidden;
+      }
+      .acc-btn {
+      width:100%;
+      margin:0 auto;
+      padding:20px 25px;
+      cursor:pointer;
+      background:#34495E;
+      border-bottom:1px solid #2C3E50;
+      }
+      .acc-content {
+      height:0px;
+      width:100%;
+      margin:0 auto;
+      overflow:hidden;
+      background:#2C3E50;
+      }
+      .acc-content-inner {
+      padding:30px;
+      }
+      .open {
+      height: auto;
+      }
+      h1 {
+      font:700 20px/26px 'Lato', sans-serif;
+      color:#ffffff;
+      }
+      p {
+      font:400 16px/24px 'Lato', sans-serif;
+      color:#798795;
+      }
+      .selected {
+      color:#1ABC9C;
+      }
+      body {
+      margin: 0;
+      padding: 0;
+      }
+      thead {
+      background:
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+      }
+       .panel{
+        height: 30px;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .bg-lovender {
+      background-color: #FFB741 !important;
+      color: #FFF !important;
+      }
+      .lovender-text {
+      color: #6a5fb1;
+      }
+      .img-circle {
+      width:100px;
+      height:100px;
+      margin-top:0px;
+      border:2px solid lightgrey;
+      }
+      .message-box{
+        background:#fff url(https://s3.amazonaws.com/flashypublic/mail-header-bg.png) no-repeat top left;
+        padding-top:40px;
+        padding-bottom:20px;
+        padding-left:20px;
+        padding-right:20px;
+        border-bottom-left-radius:7px;
+        border-bottom-right-radius:7px;
+        -moz-border-radius-bottomleft:7px;
+        -moz-border-radius-bottomright:7px;
+      }
+      .message-shadow{
+        background:transparent url(https://s3.amazonaws.com/flashypublic/mail-footer-bg.png) no-repeat center top;
+        height:24px;
+        clear:both;
+      }
+      .message-icon{
+        float:left;
+        width:80px;
+        display:inline;
+        margin-right:25px;
+      }
+      .message-content{
+        float:left;
+        display:inline;
+        width:484px;
+      }
+      .clear{clear:both;}
+      .container{
+        width:629px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:10%;
+      }
+
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+           b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .navbar-custom-menu
+          ul.top-nav.navbar-right
+            // Notification Menu
+            // User Menu
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                i.fa.fa-user.fa-lg.pull-right(style='margin: 10px 10px 0 0;font-size: 2.2em;color: #f2815e;')
+              ul.dropdown-menu.settings-menu(style="margin-top: 35px")
+                li
+                  a(href='/help',target='_blank')
+                    i.fa.fa-question.fa-lg
+                    |  Help
+                li
+                  a(href='/change')
+                    i.fa.fa-cog.fa-lg
+                    |  Settings
+                li
+                  a(href='/logout')
+                    i.fa.fa-sign-out.fa-lg
+                    |  Logout
+
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+            //-     if !user.profilepic
+            //-       img.img-circle(src="profilepics/" +user.rollno+ ".jpg", width='80')
+            //-     else
+            //-       img.img-circle(src='img/user.jpg', width='80')
+            //- h5.centered 
+            //-   p.sname= user.name
+            //- li.mt
+            //-   a.active(data-toggle='tab', href='#notice')
+            //-     i.fa.fa-list
+            //-     span Notice
+          // sidebar menu end
+      // sidebar end
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #notice.tab-pane.fade.in.active
+                  .row(style="background-color:#F2F2F2;margin:-20px 0;padding:0")
+                    .container
+                      .message-box
+                        .message-icon
+                          img(src='https://s3.amazonaws.com/flashypublic/mail-delivery-success.png', width='80', height='81', alt='success')
+                        .message-content
+                          h2.success Latest News!
+                          -for(var i=news.length-1; i>=0; i--) {
+                            p #{news[i].description}
+                              br
+                              center
+                                h3
+                                  p Watch this Video Here!
+                              center
+                                iframe(width='480', height='315', src='//www.youtube.com/embed/'+news[i].link, frameborder='0', allowfullscreen='')
+                              hr
+                          -}
+                        .clear
+                      .message-shadow      
+      // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')

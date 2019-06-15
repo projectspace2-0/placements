@@ -1,0 +1,2599 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My_Data
+    link(type='image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
+    script(src='http://code.jquery.com/jquery-1.9.1.js')
+    script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+    script(src='js/sweetalert.min.js')
+    link(rel='stylesheet', type='text/css', href='js/sweetalert.css')
+    link(rel='stylesheet', type='text/css', href='https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css')
+    link(rel='stylesheet', type='text/css', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')    
+    link(href='/assets/plugins/dataTables/dataTables.bootstrap.css', rel='stylesheet')
+    style.
+      @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      #name {
+      color: #B4886B;
+      font-weight: bold;
+      float: left;
+      margin-left:100px;
+      font-size:15px;
+      }
+      .uppercase {
+      text-transform: uppercase;
+      }
+      #wd
+      {
+      margin-left:20px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .upload-btn,.upload-btnadhar{
+      color: #ffffff;
+      background-color: #F89406;
+      border: none;
+      }
+      .upload-btnpassport{
+      color: #ffffff;
+      background-color: #F89406;
+      border: none;
+      }
+      .upload-btn:hover,
+      .upload-btn:focus,
+      .upload-btn:active,
+      .upload-btn.active,
+      .upload-btn:hover,
+      .upload-btnadhar:focus,
+      .upload-btnadhar:active,
+      .upload-btnadhar.active
+      .upload-btnpassport:hover,
+      .upload-btnpassport:focus,
+      .upload-btnpassport:active,
+      .upload-btnpassport.active {
+      color: #ffffff;
+      background-color: #FA8900;
+      border: none;
+      }
+      #upload-input, #upload-inputadhar, #upload-inputpassport {
+      display: none;
+      }
+      .bs-example{
+        margin: 20px;
+      }
+      .modal-dialog {
+
+        width: 30%; /* Full width */
+        padding-top: 100px;
+      }
+      .personal_details {
+      background-color: white;
+      width: 90%;
+      margin-left:5%;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      border-bottom: 2px solid #fd9f1b;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+
+      .success-text {
+      color: #82b33a;
+      }
+      .btn-info{
+      margin-left:20px;
+      }
+      .btn-circle {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      line-height: 1.428571429;
+      border-radius: 15px;
+      }
+      .data{
+        font-weight:bold;
+      }
+      #box2,#box3{
+      display:none;
+      }
+      #family-table td{
+        border: none !important;
+      }
+      #passport-table td{
+        border: none !important;
+      }
+
+      table thead th{
+      color: #B4886B;
+      font-weight: bold;
+      font-size:15px;
+      }
+      table tbody tr td{
+      color:grey;
+      font-size:14px;
+      }
+      .img-circle {
+      width:100px;
+      border-radius:50%;
+      height:100px;
+      margin-top:0px;
+      border:2px solid lightgrey;
+      }
+
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+          b
+            img.img-responsive(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .navbar-custom-menu
+          ul.top-nav.navbar-right
+            // Notification Menu
+            // User Menu
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                i.fa.fa-user.fa-lg.pull-right(style='margin: 10px 10px 0 0;font-size: 2.2em;color: #f2815e;')
+              ul.dropdown-menu.settings-menu(style="margin-top: 35px")
+                li
+                  a(href='/help',target='_blank')
+                    i.fa.fa-question.fa-lg
+                    |  Help
+                li
+                  a(href='/change')
+                    i.fa.fa-cog.fa-lg
+                    |  Settings
+                li
+                  a(href='/logout')
+                    i.fa.fa-sign-out.fa-lg
+                    |  Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                //- if !user.profilepic
+                //-   img.img-circle(src="profilepics/" +user.rollno+ ".jpg", width='150', height='150')
+                //- else
+                //-   img.img-circle(src='user.jpg', width='80')
+            h5.centered
+              p #{user.name}
+            li.mt
+              a.active(data-toggle='tab', href='#personaldata')
+                i.fa.fa-tachometer
+                span Personal Data
+              ul.sub
+                li
+                  a(data-toggle='tab', href='#family') Family Details
+                li
+                  a(data-toggle='tab', href='#address') Address Details
+            li.sub-menu
+              a(data-toggle='tab', href='#education')
+                i.fa.fa-book
+                span Education
+              ul.sub
+                li.smen
+                  a(data-toggle='tab', href='#ug') Under Graduation
+            li.sub-menu
+              a(data-toggle='tab', href='#professional')
+                i.fa.fa-briefcase
+                span Professional Data
+              ul.sub
+                li
+                  a(data-toggle='tab', href='#certi') Certifications
+                li
+                  a(data-toggle='tab', href='#hack') Hackathons
+                li
+                  a(data-toggle='tab', href='#com') Competitions
+                li
+                  a(data-toggle='tab', href='#work') Workshops
+                li
+                  a(data-toggle='tab', href='#ccomp') Completiton Certifications
+                li
+                  a(data-toggle='tab', href='#thub') T-Hub Participations
+            li.sub-menu
+              a(data-toggle='tab', href='#tech')
+                i.fa.fa-cog
+                span Technical Skills
+            li.sub-menu
+              a(data-toggle='tab', href='#aadhar')
+                i.fa.fa-file
+                span Aadhar
+            li.sub-menu
+              a(data-toggle='tab', href='#passport')
+                i.fa.fa-plane
+                span Passport
+            li.sub-menu
+              a(data-toggle='tab', href='#projec')
+                i.fa.fa-terminal
+                span Projects
+            li.sub-menu
+              a(data-toggle='tab', href='#resume')
+                i.fa.fa-list
+                span Resumes
+            li.sub-menu
+              a(data-toggle='tab', href='#social')
+                i.fa.fa-facebook-square
+                span Social Media
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #personaldata.tab-pane.fade.in.active
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-user
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Personal Data
+                  .personal_details
+                    h3(style='margin-top:0%') Professional
+                    .table-responsive
+                      table
+                        tr
+                          td
+                            label#name Name :
+                          td
+                            label.data(id='name1',style='margin-left;10px') #{user.name}
+                          td
+                            label#name Roll No :
+                          td
+                            label.data(id='rollno',style='margin-left;10px') #{user.rollno}
+                        tr
+                          
+                          td
+                            label#name College :
+                          td
+                            label.data(id='college',style='margin-left;10px') #{user.college}
+                          td
+                            label#name Department :
+                          td
+                            label.data(id='dept',style='margin-left;10px') #{user.dept}
+                        tr
+                          
+                          td
+                            label#name Email ID :
+                          td
+                            label.data(id='email',type='email', style='margin-left;10px') #{user.email}
+                          td
+                            label#name Mobile Number :
+                          td
+                            label.data(id='mobile',style='margin-left;10px') #{user.mobile}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          
+                        tr
+                          
+                          td
+                            label#name Alternate Email ID :
+                          td
+                            label.data(id='email1',type='email', style='margin-left;10px') #{user.email1}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Alternate Mobile Number :
+                          td
+                            label.data(id='mobile1',style='margin-left;10px') #{user.mobile1}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          
+                          td
+                            label#name Semister :
+                          td
+                            label.data(id='semister',type='email', style='margin-left;10px') #{user.semister}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Year :
+                          td
+                            label.data(id='year',style='margin-left;10px') #{user.year}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          
+                        
+                    br
+                    br
+
+                  .personal_details
+                    h3 Personal
+                    .table-responsive
+                      table
+                        tr
+                          td
+                            label#name Mother Tongue :
+                          td
+                            label.data(id='mothertongue',style='margin-left;10px') #{user.mothertongue}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Religion :
+                          td
+                            label.data(id='religion',style='margin-left;10px') #{user.religion}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr  
+                          td
+                            label#name Date Of Birth :
+                          td
+                            label.data(id='dob',style='margin-left;10px') #{user.dob}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Original Date of birth :
+                          td
+                            label.data(id='odob',style='margin-left;10px') #{user.odob}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+
+                        
+                        tr
+                          td
+                            label#name Caste :
+                          td
+                            label.data(id='caste',style='margin-left;10px') #{user.caste}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Gender :
+                          td
+                            label.data(id='gender',style='margin-left;10px') #{user.gender}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          td
+                            label#name Nationality :
+                          td
+                            label.data(id='nationality',style='margin-left;10px') #{user.nationality}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Blood Group :
+                          td
+                            label.data(id='bloodgroup',style='margin-left;10px') #{user.bloodgroup}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        
+                  
+                  br                  
+
+                #family.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-12.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-user
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Personal Data
+                  .personal_details
+                    h3 Family 
+                    .col-lg-12.col-ms-12.col-xs-12
+                      .col-lg-8.col-ms-4.col-xs-4.col-md-offset-2
+                        table#family-table.table
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Father Name
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#fathername(type='text',size='30',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)',value=user.fathername)
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date Of Birth
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#fatherdob(type='date', size='20',value=user.fatherdob,style='width:150px;')
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Mother Name
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#mothername(type='text',size='45',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)',value=user.mothername)
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date Of Birth
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#motherdob(type='date', size='45',value=user.motherdob,style='width:150px;')
+                          tr
+                            td
+                              select#s1(name='sibling').form-control
+                                option(value='sibling1')  Sibling1
+                                option(value='sibling2')  Sibling2
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling1name(type='text',size='45',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)',value=user.sibling1name)
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date Of Birth
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling1dob(type='date', size='50',value=user.sibling1dob,style='width:150px;')
+                          tr#box2
+                            td
+                              select#s2(name='sibling2').form-control
+                                option(value='sibling2')  Sibling2
+                                option(value='sibling3')  Sibling3
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling2name(type='text',size='45',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)',value=user.sibling2name)
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date Of Birth
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling2dob(type='date', size='50',value=user.sibling2dob,style='width:150px;')
+                          tr#box3
+                            td
+                              select#s3(name='sibling3').form-control
+                                option(value='sibling3')  Sibling3
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling3name(type='text',size='45',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)',value=user.sibling3name)
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date Of Birth
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                            td
+                              input.form-control.input-sm#sibling3dob(type='date', size='50', value=user.sibling3dob,style='width:150px;')                  
+
+                    .col-lg-12                     
+                      center
+                        button#familyinfo.btn.btn-info(type='button',onclick="JSalert()")  Save
+
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+
+                #address.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-user
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Personal Data
+                  .personal_details
+                    h3(style='margin-top:-0%') Address
+                    .table-responsive
+                      table
+                        tr
+                          td
+                            Strong
+                              h4(style='margin-left: 32%;width: 100%;') Permanent address
+                        tr
+                          td
+                            label#name Door no:
+                          td
+                            label.data(id='PermanentDoorno',style='margin-left;10px') #{user.PermanentDoorno}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Street:
+                          td
+                            label.data(id='PermanentStreet',style='margin-left;10px') #{user.PermanentStreet}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          td
+                            label#name City:
+                          td
+                            label.data(id='PermanentCity',style='margin-left;10px') #{user.PermanentCity}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name State:
+                          td
+                            label.data(id='PermanentState',style='margin-left;10px') #{user.PermanentState}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          td
+                            label#name Country:
+                          td
+                            label.data(id='PermanentCountry',style='margin-left;10px') #{user.PermanentCountry}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Zip Code:
+                          td
+                            label.data(id='Permanentzipcode',style='margin-left;10px') #{user.Permanentzipcode}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                    center
+                      p
+                        input(type='checkbox' id='temp',style='width:15px;height:15px')
+                        |  Use permanent address as temporary address
+                    .table-responsive
+                      table(style='margin-top:-1%')
+                        tr
+                          td
+                            Strong
+                              h4(style='margin-left: 32%;width: 100%;') Temporary address
+                        tr
+                          td
+                            label#name Door no:
+                          td
+                            label.data(id='TemporaryDoorno',style='margin-left;10px') #{user.TemporaryDoorno}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Street:
+                          td
+                            label.data(id='TemporaryStreet',style='margin-left;10px') #{user.TemporaryStreet}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          td
+                            label#name City:
+                          td
+                            label.data(id='TemporaryCity',style='margin-left;10px') #{user.TemporaryCity}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name State:
+                          td
+                            label.data(id='TemporaryState',style='margin-left;10px') #{user.TemporaryState}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                        tr
+                          td
+                            label#name Country:
+                          td
+                            label.data(id='TemporaryCountry',style='margin-left;10px') #{user.TemporaryCountry}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+                          td
+                            label#name Zip Code:
+                          td
+                            label.data(id='Temporaryzipcode',style='margin-left;10px') #{user.Temporaryzipcode}
+                            a.edit(href='#',style='color:blue;margin-left:5px')
+                              i.fa.fa-pencil-square-o
+                              span edit
+
+                  br
+                  br
+
+                #education.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Education
+                  .personal_details
+                    h3 SSC
+                    .col-lg-12.ssc
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+                                input#inputsscy.form-control.input-sm(type='text', value=user.SSC?user.SSC.YearOfPass:'', onkeypress='return event.charCode >= 48 && event.charCode <= 57', maxlength='4',minlength='4',required)
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution: 
+                              td
+                                input#inputssci.form-control.input-sm(type='text', value=user.SSC?user.SSC.Institution:'', size='50',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Percentage: 
+                              td
+                                input#inputsscp.form-control.input-sm(type='text', value=user.SSC?user.SSC.Percentage:'', size='50',onkeypress='return event.charCode >= 46 && event.charCode <= 57',maxlength='5',minlength='5',required)
+
+                        center
+                          br
+                          br
+                          br
+                          br
+                          br
+                          //a(onclick="document.getElementById('upload-ssc').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                          input#upload-ssc.file-chooser__input.btn.btn-default(type='file',name='uploadsssc[]',style='display: none; ')
+
+                          button#uploadbtn-ssc.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                          //Download Button
+                          if user.SSC
+                            if user.SSC.Certificate
+                              //button.btn.btn-info
+                                a(href=user.SSC.Certificate, style='color: white', download) Download
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                  br
+                  .personal_details
+                    h3 Intermediate
+                    .col-lg-12.inter
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+                                input#inputintery.form-control.input-sm(type='text', value=user.Inter?user.Inter.YearOfPass:'',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required)
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution: 
+                              td
+                                input#inputinteri.form-control.input-sm(type='text', value=user.Inter?user.Inter.Institution:'', size='50',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Percentage: 
+                              td
+                                input#inputinterp.form-control.input-sm(type='text', value=user.Inter?user.Inter.Percentage:'', size='50',onkeypress='return event.charCode >= 46 && event.charCode <= 57',maxlength='5',minlength='5',required)
+
+                        center
+                          br
+                          br
+                          br
+                          br
+                          br
+                          //Action Button
+                          //a(onclick="document.getElementById('upload-inter').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                          input#upload-inter.file-chooser__input.btn.btn-default(type='file',name='uploadsinter[]' style='display: none')
+                          button#uploadbtn-inter.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                          //Download Button
+                          if user.Inter
+                            if user.Inter.Certificate
+                              //button.btn.btn-info
+                                a(href=user.Inter.Certificate, style='color: white', download) Download
+
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                  br
+                  .personal_details
+                    h3  Diploma 
+                       
+                        //span.text-danger   &nbsp;&nbsp; * important! Please Click save button even if you don`t have ....
+                    .col-lg-12.inter
+                      br
+                      form(method='POST',action='', enctype='multipart/form-data')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Year of passing:   
+                              td
+                                input#inputdipy.form-control.input-sm(type='text', value=user.Diploma?user.Diploma.YearOfPass:'',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required)
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Institution: 
+                              td
+                                input#inputdipi.form-control.input-sm(type='text', value=user.Diploma?user.Diploma.Institution:'', size='50',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                        .col-lg-4
+                          table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Percentage: 
+                              td
+                                input#inputdipp.form-control.input-sm(type='text', value=user.Diploma?user.Diploma.Percentage:'', size='50',onkeypress='return event.charCode >= 46 && event.charCode <= 57',maxlength='5',minlength='5',required)
+
+                        center
+                          br
+                          br
+                          br
+                          br
+                          br
+                          //Action Button
+                          //a(onclick="document.getElementById('upload-inter').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                          input#upload-inter.file-chooser__input.btn.btn-default(type='file',name='uploadsinter[]' style='display: none')
+                          button#uploadbtn-diploma.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                          //Download Button
+                          if user.Inter
+                            if user.Inter.Certificate
+                              //button.btn.btn-info
+                                a(href=user.Inter.Certificate, style='color: white', download) Download
+
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                #ug.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-book
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Education
+                  .personal_details
+                    h3 Under Graduation
+                    center
+                      p#ug1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td(for='ug')
+                              br
+                              label#name  Course:  
+                              td
+                                br
+                                input#uginputbox.form-control.input-sm(type='text', name='ug', size='50',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                            td 
+                              br
+                              label#name  Year of passing:   
+                              td
+                                br
+                                input#inputugy.form-control.input-sm(type='text',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required)
+                          tr
+                            td
+                              br
+                              label#name Institution:
+                            td
+                              br
+                              input#inputugi.form-control.input-sm(type='text', size='50',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                            td
+                              br
+                              label#name Percentage :
+                            td
+                              br
+                              input#inputugp.form-control.input-sm(type='text', size='50',onkeypress='return event.charCode >= 46 && event.charCode <= 57',maxlength='5',minlength='5',required)
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-ug.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Under Graduation Courses
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Course
+                                  th.text-center Year of Passing 
+                                  th.text-center Institution
+                                  th.text-center Percentage
+                                  th.text-center Action
+
+                                tbody.ug
+                                  if user.UG
+                                    -for (var i = user.UG.length-1; i >=0; --i) {
+                                      tr.removerow2
+                                        td.text-center#uc
+                                          p(style="margin-top: 8px;")=user.UG[i].Course
+                                        td.text-center#uy
+                                          p(style="margin-top: 8px;")=user.UG[i].Year
+                                        td.text-center#ui
+                                          p(style="margin-top: 8px;")=user.UG[i].Institution
+                                        td.text-center#up
+                                          p(style="margin-top: 8px;")=user.UG[i].Percentage
+                                          //Action Button
+                                        td.text-center
+                                          button.remUG.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}                
+                #projec.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-star
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Project Details
+                  .personal_details
+                    h3 Projects
+                    center
+                      center
+                        p#er(style="color:red")
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Title:
+                            td
+                              input.form-control.input-sm#extitle1(type='text', name='projects', style='',size='20')
+                            td
+                              label#name Technology:
+                            td
+                              input.form-control.input-sm#extechnology1(type='text', name='projects', style='',size='20')
+                            td
+                              label#name Team Size:
+                            td
+                              input.form-control.input-sm#exteam1(type='number', name='projects', style='',size='20')
+                            
+                          tr
+                            td
+                              br
+                              label#name From :
+                            td
+                              br
+                              input.form-control.input-sm#exf1.fromdate(name='projects', style='',size='20')
+                            td
+                              br
+                              label#name To :
+                            td
+                              br
+                              input.form-control.input-sm#ext1.todate(name='projects', style='',size='20')
+                            td
+                              label#name Description :
+                            td
+                              br
+                              textarea.form-control.input-sm#exdescription1(name='project', style='',size='20', rows='5', cols='20')
+                          tr
+                            td(colspan="7", align="center")
+                              br
+                              br
+                              input#addbtn-exprojec.btn.btn-info(type='button', value='Add',onclick="JSalert()")
+                        br  
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Projects
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example1.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Title
+                                  th.text-center Description
+                                  th.text-center Team Size
+                                  th.text-center Technology
+                                  th.text-center From 
+                                  th.text-center To 
+                                  th.text-center Action 
+                                tbody.projecdt
+                                  br
+                                  if user.Projects
+                                    -for (var i = user.Projects.length-1; i >=0; --i) {
+                                      tr.removerow1
+                                        td.text-center#extitle1
+                                          p=user.Projects[i].Title1
+                                        td.text-center#exdescription1
+                                          p=user.Projects[i].Description1
+                                        td.text-center#exteam1
+                                          p=user.Projects[i].Team1
+                                        td.text-center#extechnology1
+                                          p=user.Projects[i].Technology1
+                                        td.text-center#exf1
+                                          p=user.Projects[i].From1
+                                        td.text-center#ext1
+                                          p=user.Projects[i].To1
+                                        td.text-center
+                                          button.remProjec.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+
+                                          
+                                    -}
+                #certi.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Certifications
+                  .personal_details
+                    h3 Certifications
+                    center
+                      p#certi1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#certin(type='text', name='qualification', style='',size='20')
+                            td
+                              label#name Organisation :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#certio(type='text', name='qualification', style='',size='20')
+                          tr
+                            td
+                              br
+                              label#name Month :
+                            td
+                              br
+                              select.form-control.input-sm#certim
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :
+                            td 
+                              br
+                              input.form-control.input-sm#certiy(type='text', name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-certi.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Certifications
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example2.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                  th.text-center Organisation
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.certi
+                                  if user.Certifications
+                                    -for (var i = user.Certifications.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#cn
+                                          p(style="margin-top: 8px;")=user.Certifications[i].Name
+                                        td.text-center#co
+                                          p(style="margin-top: 8px;")=user.Certifications[i].Org
+                                        td.text-center#cm
+                                          p(style="margin-top: 8px;")=user.Certifications[i].Month
+                                        td.text-center#cy
+                                          p(style="margin-top: 8px;")=user.Certifications[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remCerti.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #hack.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Hackthons
+                  .personal_details
+                    h3 Hackthons
+                    center
+                      p#hack1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#hackn(type='text', name='qualification', style='',size='20')
+                            td
+                              label#name Organisation :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#hacko(type='text', name='qualification', style='',size='20')
+                          tr
+                            td
+                              br
+                              label#name Month :
+                            td
+                              br
+                              select.form-control.input-sm#hackm
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :
+                            td 
+                              br
+                              input.form-control.input-sm#hacky(type='text', name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-hack.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Hackthons
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example4.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                  th.text-center Organisation
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.hack
+                                  if user.Hackthon
+                                    -for (var i = user.Hackthon.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#hn
+                                          p(style="margin-top: 8px;")=user.Hackthon[i].Name
+                                        td.text-center#ho
+                                          p(style="margin-top: 8px;")=user.Hackthon[i].Org
+                                        td.text-center#hm
+                                          p(style="margin-top: 8px;")=user.Hackthon[i].Month
+                                        td.text-center#hy
+                                          p(style="margin-top: 8px;")=user.Hackthon[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remHack.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #com.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Competitions
+                  .personal_details
+                    h3 Competitions
+                    center
+                      p#com1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#comn(type='text', name='qualification', style='',size='20')
+                            td
+                              label#name Organisation :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#como(type='text', name='qualification', style='',size='20')
+                          tr
+                            td
+                              br
+                              label#name Month :
+                            td
+                              br
+                              select.form-control.input-sm#comm
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :
+                            td 
+                              br
+                              input.form-control.input-sm#comy(type='text', name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-com.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Competitions
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example5.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                  th.text-center Organisation
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.com
+                                  if user.Competitions
+                                    -for (var i = user.Competitions.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#con
+                                          p(style="margin-top: 8px;")=user.Competitions[i].Name
+                                        td.text-center#coo
+                                          p(style="margin-top: 8px;")=user.Competitions[i].Org
+                                        td.text-center#com
+                                          p(style="margin-top: 8px;")=user.Competitions[i].Month
+                                        td.text-center#coy
+                                          p(style="margin-top: 8px;")=user.Competitions[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remCom.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #work.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Workshops
+                  .personal_details
+                    h3 Workshops
+                    center
+                      p#work1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#workn(type='text', name='qualification', style='',size='20')
+                            td
+                              label#name Organisation :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#worko(type='text', name='qualification', style='',size='20')
+                          tr
+                            td
+                              br
+                              label#name Month :
+                            td
+                              br
+                              select.form-control.input-sm#workm
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :
+                            td 
+                              br
+                              input.form-control.input-sm#worky(type='text', name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-work.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Workshops
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example6.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                  th.text-center Organisation
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.work
+                                  if user.Workshops
+                                    -for (var i = user.Workshops.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#wn
+                                          p(style="margin-top: 8px;")=user.Workshops[i].Name
+                                        td.text-center#wo
+                                          p(style="margin-top: 8px;")=user.Workshops[i].Org
+                                        td.text-center#wm
+                                          p(style="margin-top: 8px;")=user.Workshops[i].Month
+                                        td.text-center#wy
+                                          p(style="margin-top: 8px;")=user.Workshops[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remWork.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #ccomp.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Completion
+                  .personal_details
+                    h3 Completion
+                    center
+                      p#comp1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#compn(type='text', name='qualification', style='',size='20')
+                            td
+                              label#name Organisation :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#compo(type='text', name='qualification', style='',size='20')
+                          tr
+                            td
+                              br
+                              label#name Month :
+                            td
+                              br
+                              select.form-control.input-sm#compm
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :
+                            td 
+                              br
+                              input.form-control.input-sm#compy(type='text', name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-comp.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Completion
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example7.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                  th.text-center Organisation
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.comp
+                                  if user.Completion
+                                    -for (var i = user.Completion.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#copn
+                                          p(style="margin-top: 8px;")=user.Completion[i].Name
+                                        td.text-center#copo
+                                          p(style="margin-top: 8px;")=user.Completion[i].Org
+                                        td.text-center#copm
+                                          p(style="margin-top: 8px;")=user.Completion[i].Month
+                                        td.text-center#copy
+                                          p(style="margin-top: 8px;")=user.Completion[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remComp.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #thub.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Professional
+                  .personal_details
+                    h3 T HUB Contribution
+                    center
+                      p#thubp1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Program Name :
+                            td
+                              select.form-control.input-sm#thubprogram
+                                option(value='')  --select--
+                                option(value='T Shaped Engineer') T Shaped Engineer
+                                option(value='Code Heat') Code HEAT
+                                option(value='Pupa') Pupa
+                                option(value='Skill Up') Skill Up
+                                option(value='Target') Target
+                                option(value='Hackathon') Hackathon
+                                option(value='In Campus Internship') In Campus Internship
+                                option(value='IOT') IoT
+                                option(value='Project Hub') Project Hub
+                                option(value='Women Empowerment') Women Empowerment
+                                option(value='Industry Connect') Industry Connect
+                            td
+                              label#name Duration (in days) :     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              input.form-control.input-sm#thubduration(type='text', name='qualification', style='',size='20', onkeypress='return event.charCode >= 48 && event.charCode <= 57')
+                          tr
+                            td
+                              br
+                              label#name Month :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              br
+                              select.form-control.input-sm#thubmonth
+                                option(value='')  --select--
+                                option(value='January') January
+                                option(value='February') February
+                                option(value='March') March
+                                option(value='April') April
+                                option(value='May') May
+                                option(value='June') June
+                                option(value='July') July
+                                option(value='August') August
+                                option(value='September') September
+                                option(value='October') October
+                                option(value='November') November
+                                option(value='December') December
+                            td
+                              br
+                              label#name Year :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            td
+                              br
+                              input.form-control.input-sm#thubyear(type='text',name='qualification', style='',size='20',onkeypress='return event.charCode >= 48 && event.charCode <= 57',maxlength='4',minlength='4',required,placeholder='YYYY')  
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-thub.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of T-Hub Contributions
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example3.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Program
+                                  th.text-center Duration
+                                  th.text-center Month
+                                  th.text-center Year
+                                  th.text-center Action
+
+                                tbody.thub
+                                  if user.Thub
+                                    -for (var i = user.Thub.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#thubp
+                                          p(style="margin-top: 8px;")=user.Thub[i].Program
+                                        td.text-center#thubd
+                                          p(style="margin-top: 8px;")=user.Thub[i].Duration
+                                        td.text-center#thubm
+                                          p(style="margin-top: 8px;")=user.Thub[i].Month
+                                        td.text-center#thuby
+                                          p(style="margin-top: 8px;")=user.Thub[i].Year
+
+                                          //Action Button
+                                        td.text-center
+                                          button.remThub.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}            
+                #tech.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-bookmark
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Technical Skills
+                  .personal_details
+                    h3 Technical Skills
+                    center
+                      p#skills1(style='color:red')
+                      .table-responsive
+                        table
+                          tr
+                            td
+                              label#name Name :
+                            td
+                              input.form-control.input-sm#skillsn(type='text', name='Skills', style='',size='20')
+                          tr
+                            td(colspan="4", align="center")
+                               br
+                               br
+                               input#addbtn-skills.btn.btn-info(type='button', value='ADD',onclick="JSalert()")
+                        br                     
+                  br
+                  br
+                  .row.personal_details
+                    center
+                      h3 List of Technical Skills
+                    br
+                    .col-lg-1
+                    .col-lg-10
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example8.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th.text-center Name
+                                tbody.skills
+                                  if user.Skills
+                                    -for (var i = user.Skills.length-1; i >=0; --i) {
+                                      tr.removerow
+                                        td.text-center#ss
+                                          p(style="margin-top: 8px;")=user.Skills[i].Name
+                                          //Action Button
+                                        td.text-center
+                                          button.remSkills.btn.btn-warning
+                                            span.glyphicon.glyphicon-trash
+                                            |  &nbsp;Remove
+                                    -}
+                #aadhar.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-file
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Adhar
+                  .personal_details
+                    h3 Aadhar Details
+                    center
+                      center
+                        p#er(style="color:red")
+                      .table-responsive
+                        table
+                          tr
+                            td
+                    .col-lg-12(style='background-color:white').adhar
+                      form(method='post')
+                        br
+                        center
+                          .col-lg-12
+                            .table-responsive
+                              table
+                                tr
+                                  td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Aadhar No:   
+                                  td
+                                    label.data(id='Adharno',style='margin-left;10px') #{user.Adharno}
+                                    a.edit(href='#',style='color:blue;margin-left:5px')
+                                      i.fa.fa-pencil-square-o
+                                      span edit
+                                tr
+                                  td(align="center", colspan="2")
+                                    br
+                                    br
+                                    //Upload Button
+                                    //a(onclick="document.getElementById('upload-adhar').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                                    input#upload-adhar.file-chooser__input.btn.btn-default(type='file',name='uploadsadhar[]' style='display: none')
+
+                                    button#uploadbtn-adhar.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                                    
+                                    //if user.adhar
+                                      button.btn.btn-info(style='')
+                                        a(href=user.adhar, style='color: white;', download) Download
+                              br
+
+                #passport.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-plane
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Passport
+                  .personal_details
+                    h3 Passport Details
+                    center
+                      center
+                        p#er(style="color:red")
+                      .table-responsive
+                        table
+                          tr
+                            td
+                    .col-lg-12(style='background-color:white').passport
+                      form(method='post')
+                        br
+                        .col-lg-6.col-md-offset-3
+                          table#passport-table.table
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Passport No
+                              td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                              td
+                                input#passportno.form-control.input(type='text', value=user.Passportdetails?user.Passportdetails.Passportno:'', style='height: 25px')
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Place of Issue
+                              td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                              td
+                                input#plsissue.form-control.input(type='text', value=user.Passportdetails?user.Passportdetails.PlaceOfIssue:'', style='height: 25px',onkeypress='return event.charCode >31 && (event.charCode <48 || event.charCode >=65)')
+                            tr
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Date of Issue
+                              td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                              td
+                                input#dtofissue.form-control.input(type='date' value=user.Passportdetails?user.Passportdetails.DateOfIssue:'', style='height: 25px')
+                              td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Validity Date
+                              td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;') :
+                              td
+                                input#validity.form-control.input(type='date' value=user.Passportdetails?user.Passportdetails.Validity:'', style='height: 25px')
+                        br
+                        br
+                        //font(color='red')
+                          span.firstLabel(style='margin-left:15px') Note:Please Upload First and Last Page of Passport
+                        .col-lg-12
+                          center
+                            
+                            br
+                            //Upload Button
+                            //a(onclick="document.getElementById('upload-passport').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                            input#upload-passport.file-chooser__input.btn.btn-default(type='file',name='uploadspassport[]' style='display: none;')
+                            
+                            button#uploadbtn-passport.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                            
+                            //if user.passport
+                              button.btn.btn-info
+                                a(href=user.passport, style='color: white', download) Download
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                      br
+                #work.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-building
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Work Location
+
+                  .personal_details
+                    h3 Work Location Details
+                    center
+                      center
+                        p#er(style="color:red")
+                      .table-responsive
+                        table
+                          tr
+                            td
+                    .col-lg-12(style='background-color:white').location
+                      form(method='post')
+                        br
+                        .col-lg-3
+                        .col-lg-3
+                          .table-responsive
+                            center
+                              table
+                                tr
+                                  td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Location:   
+                                  td
+                                    label.data(id='Location',style='margin-left;10px') #{user.Location}
+                                    a.edit(href='#',style='color:blue;margin-left:5px')
+                                      i.fa.fa-pencil-square-o
+                                      span edit
+                                tr
+                                  td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Floor No:   
+                                  td
+                                    label.data(id='Floor',style='margin-left;10px') #{user.Floor}
+                                    a.edit(href='#',style='color:blue;margin-left:5px')
+                                      i.fa.fa-pencil-square-o
+                                      span edit
+                        .col-lg-4
+                          .table-responsive
+                            center
+                              table
+                                tr
+                                  td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Building:   
+                                  td
+                                    label.data(id='Building',style='margin-left;10px') #{user.Building}
+                                    a.edit(href='#',style='color:blue;margin-left:5px')
+                                      i.fa.fa-pencil-square-o
+                                      span edit
+                                tr
+                                  td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Room Name:   
+                                  td
+                                    label.data(id='Room',style='margin-left;10px') #{user.Room}
+                                    a.edit(href='#',style='color:blue;margin-left:5px')
+                                      i.fa.fa-pencil-square-o
+                                      span edit
+                        .col-lg-12
+                          .table-responsive
+                            center
+                              table
+                                tr
+                                  td(colspan="2", align="center")
+                                    br
+                                    br
+                                    //a(onclick="document.getElementById('upload-pancard').click(); ",title='Upload Size <= 1MB', data-toggle='tooltip', data-placement='top').btn.btn-info Upload
+                                    input#upload-pancard.file-chooser__input.btn.btn-default(type='file',name='uploadspancard[]' style='display:none; ')
+                                    button#uploadbtn-pancard.btn.btn-info.push(type='button',onclick="JSalert()")  Save
+                                    if user.pancard
+                                      button.btn.btn-info
+                                        a(href=user.pancard, style='color: white', download) Download Certificate
+                            br
+                #resume.tab-pane.fade.align
+                  br 
+                  br
+                  .container(style='background-color: white;width: 100%;height:100%;')
+                    center
+                      form(enctype='multipart/form-data', action='resume', method='post')
+                        br
+                        br
+                        input(type='file', name='file')
+                        button.btn.btn-info(type='submit', value='Upload', name='submit') upload
+                      br
+                      br
+                #social.tab-pane.fade.align
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-12.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-success
+
+                            i.fa.fa-facebook-square
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p(style='margin-top:10px').size-h2 Personal Data
+                  .personal_details
+                    h3 Social Media 
+                    .col-lg-12.col-ms-12.col-xs-12(style='background-color:white')
+                      .col-lg-8.col-ms-4.col-xs-4.col-md-offset-2
+                        table#social-table.table
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Facebook
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-facebook-square(style='font-size:16px; color:#4267B2')
+                                  input.form-control.input-sm#Facebook(type='text',value=user.Facebook)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Whatsapp
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-whatsapp(style='font-size:16px; color:#43D854')
+                                  input.form-control.input-sm#Whatsapp(type='text',value=user.Whatsapp)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Twitter
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-twitter(style='font-size:16px; color:#1DA1F2')
+                                  input.form-control.input-sm#Twitter(type='text',value=user.Twitter)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Instagram
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-instagram(style='font-size:16px; color:#CC339B')
+                                  input.form-control.input-sm#Instagram(type='text',value=user.Instagram)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Google+
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-google-plus-square(style='font-size:16px; color:#D54B3D')
+                                  input.form-control.input-sm#Google(type='text',value=user.Google)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') LinkedIn
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-linkedin-square(style='font-size:16px; color:#0077B5')
+                                  input.form-control.input-sm#LinkedIn(type='text',value=user.LinkedIn)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Pinterest
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-pinterest(style='font-size:16px; color:#BD081C')
+                                  input.form-control.input-sm#Pinterest(type='text',value=user.Pinterest)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') YouTube Channel
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-youtube-play(style='font-size:16px; color:#FF0000')
+                                  input.form-control.input-sm#YouTube(type='text',value=user.YouTube)
+                          tr
+                            td(style='color: #B4886B;font-weight: bold;font-size: 1.25em') Blog
+                            td(style='color: #B4886B; font-weight: bold; font-size: 1.25em; padding: 3px;')
+                            td
+                              .col-md-15.selectContainer
+                                .input-group
+                                  span.input-group-addon
+                                    i.fa.fa-bold(style='font-size:16px; color:#F06831')
+                                  input.form-control.input-sm#Blog(type='text',value=user.Blog)
+                            
+                      .col-lg-12                     
+                        center
+                          button#social-btn.btn.btn-info(type='button',onclick="JSalert()")  Save
+                          br
+                          br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+
+
+
+      // /MAIN CONTENT
+      // main content end
+
+    // js placed at the end of the document so the pages load faster
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    script(src='assets/js/jquery.js')
+    // common script for all pages
+    script(src='assets/js/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
+    script(src='https://code.jquery.com/jquery-2.2.0.min.js')
+    //script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(src='javascripts/jquery.alerts.js', type='text/javascript')
+    script(src='javascripts/jquery.noty.packaged.js', type='text/javascript')
+    script(src='js/bootstrap-notify.js')
+    script(src='js/bootstrap-notify.min.js')
+    script(src='javascripts/education.js')
+    script(src='js/preventcontrol.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
+    // common script for all pages
+    //script(src='https://code.jquery.com/jquery-1.11.3.js')
+    script(src='js/bootstrap-filestyle.min.js')
+    script(src='assets/plugins/dataTables/jquery.dataTables.js')
+    script(src='assets/plugins/dataTables/dataTables.bootstrap.js')  
+    script(src='/assets/plugins/dataTables1/jquery.dataTables1.js')
+    script(src='/assets/plugins/dataTables1/dataTables1.bootstrap.js')
+    
+    //Online Links for datatables    
+    script(src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js')
+    script(src='https://cdn.datatables.net/buttons/1.4.1/js/dataTables.buttons.min.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.32/build/pdfmake.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.32/build/vfs_fonts.js')
+    script(src='//cdn.datatables.net/buttons/1.4.1/js/buttons.html5.min.js')
+    script(src='//cdn.datatables.net/buttons/1.4.1/js/buttons.print.min.js')
+    script.
+       $(function(){
+        var dtToday = new Date();
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+        var maxDate = year + '-' + month + '-' + day;
+        $('#exto').attr('max', maxDate);
+         $('#exfrom').attr('max', maxDate);
+        });
+    script.
+      //current date dislay
+      $("#datenow").val(new Date().toISOString().substring(0, 10)); 
+      $('option[value=""]').attr("disabled", "disabled");
+       
+       // Joining date conversion
+       var from = '#{user.DateOfJoining}'
+       var joiningDate = convertDate(from);
+
+       // Today date conversion
+       var todate=new Date();
+       var todayDate = convertDate(todate.toDateString());
+
+       stringToDate(joiningDate,"DD/MM/YYYY","/");
+       stringToDate(todayDate,"DD/MM/YYYY","/");
+
+       var noMonths = calcDate(stringToDate(joiningDate,"DD/MM/YYYY","/"),stringToDate(todayDate,"DD/MM/YYYY","/"));
+
+       $(document).ready(function(){
+        $('#months').val(noMonths);
+       });
+        
+        // Converting String to String with date format
+          function convertDate(inputFormat) {
+            function pad(s) { return (s < 10) ? '0' + s : s; }
+            var d = new Date(inputFormat);
+            var convertedDate=[pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+            return convertedDate;
+          }
+
+          // Conert String to Date
+          function stringToDate(_date,_format,_delimiter)
+          {
+              var formatLowerCase=_format.toLowerCase();
+              var formatItems=formatLowerCase.split(_delimiter);
+              var dateItems=_date.split(_delimiter);
+              var monthIndex=formatItems.indexOf("mm");
+              var dayIndex=formatItems.indexOf("dd");
+              var yearIndex=formatItems.indexOf("yyyy");
+              var month=parseInt(dateItems[monthIndex]);
+              month-=1;
+              var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
+              return formatedDate;
+            }
+
+          //Calculating Month Year based on date
+          function calcDate(date1,date2) {
+            var diff = Math.floor(date2.getTime() - date1.getTime());
+            var day = 1000 * 60 * 60 * 24;
+            var days = Math.floor(diff/day);
+            var day_age = Math.floor((diff % 31536000000) / 86400000);
+            var months = Math.floor(day_age/30);
+            var month = Math.floor(days/31);
+            var years = Math.floor(diff / 31536000000);
+            var message = ""
+            message += years + " years "
+            message +=""
+            message +=""
+            message +=""
+            message +=""
+            message += months + " months "
+            return message
+            }
+
+         //Family dob validation
+         $('#fdob,#mdob,#sdob,#k1dob,#k2dob,#k3dob').datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+
+        //From date validation 
+        $('.fromdate').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+
+        //To date validation
+        $('.todate').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+        $(document).ready(function(){
+        //Date Conversion
+        $('.fromdate').datepicker().bind("change", function () {
+            var minValue = $(this).val();
+            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+            $('.todate').datepicker("option", "minDate", minValue);
+            calculate();
+        });
+        $('.todate').datepicker().bind("change", function () {
+            var maxValue = $(this).val();
+            maxValue = $.datepicker.parseDate("yy-mm-dd", maxValue);
+            $('.fromdate').datepicker("option", "maxDate", maxValue);
+            calculate();
+        });
+
+        //Date Calculation and dispaly in Experience field
+        function calculate() {
+            var d1 = $('.fromdate').datepicker('getDate');
+            var d2 = $('.todate').datepicker('getDate');
+            var oneDay = (24*60*60*1000)/30;
+            var diff = 0;
+            if (d1 && d2) {
+              diff = Math.round(Math.abs((d2.getTime() - d1.getTime())/(oneDay)));
+            }
+            var diff1 = calcDate(d1,d2);
+            $('#exyears').val(diff1);
+            $('.minim').val(d1)
+        }  
+
+        //On Option Select Sibling2 div Display
+        $("#s1").change(function(){
+          if($(this).val() == 'sibling2'){
+            $("#box2").show();
+          }else{
+            $("#box2").hide();
+          }
+          $(this).val('sibling1'); 
+      }); 
+
+      //On Option Select Sibling3 div Display
+      $("#s2").change(function(){
+          if($(this).val() == 'sibling3'){
+            $("#box3").show();
+          }else{
+            $("#box3").hide();
+          }
+          $(this).val('sibling2');
+      });   
+      });
+
+      //Uppercase Passport Number
+      $('#passportno').keyup(function(){
+       this.value = this.value.toUpperCase();
+      });
+      function JSalert(){
+        swal({
+        title: "Your data was saved sucessfully!",
+        text: "",
+        timer: 1500,
+        showConfirmButton: false
+      });
+      }
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example1').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example2').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example3').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example4').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example5').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example6').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example7').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example8').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Report'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Report'
+            },
+            {
+                extend: 'print',
+                title: 'Report'
+            }
+        ]
+      });
+      });
+    

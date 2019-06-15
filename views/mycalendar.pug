@@ -1,0 +1,410 @@
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title My Calendar
+    link(type='image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    link(href='assets/css/calendar.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    style.
+      @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      * {
+      -webkit-box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -o-box-sizing:border-box;
+      box-sizing:border-box;
+      }
+      html, body {
+      background:#FFFFFF;
+      }
+      .acc-container {
+      width:100%;
+      margin:30px auto 0 auto;
+      -webkit-border-radius:8px;
+      -moz-border-radius:8px;
+      -o-border-radius:8px;
+      border-radius:8px;
+      overflow:hidden;
+      }
+      .acc-btn {
+      width:100%;
+      margin:0 auto;
+      padding:20px 25px;
+      cursor:pointer;
+      background:#34495E;
+      border-bottom:1px solid #2C3E50;
+      }
+      .acc-content {
+      height:0px;
+      width:100%;
+      margin:0 auto;
+      overflow:hidden;
+      background:#2C3E50;
+      }
+      .acc-content-inner {
+      padding:30px;
+      }
+      .open {
+      height: auto;
+      }
+      h1 {
+      font:700 20px/26px 'Lato', sans-serif;
+      color:#ffffff;
+      }
+      p {
+      font:400 16px/24px 'Lato', sans-serif;
+      color:#798795;
+      }
+      .selected {
+      color:#1ABC9C;
+      }
+      body {
+      margin: 0;
+      padding: 0;
+      }
+      thead {
+      background:
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+      }
+       .panel{
+        height: 30px;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .bg-lovender {
+      background-color: #FFB741 !important;
+      color: #FFF !important;
+      }
+      .lovender-text {
+      color: #6a5fb1;
+      }
+      .img-circle {
+      width:100px;
+      height:100px;
+      margin-top:0px;
+      border:2px solid lightgrey;
+      }
+
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/dashbord')
+           b
+            img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+        .navbar-custom-menu
+          ul.top-nav.navbar-right
+            // Notification Menu
+            // User Menu
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                i.fa.fa-user.fa-lg.pull-right(style='margin: 10px 10px 0 0;font-size: 2.2em;color: #f2815e;')
+              ul.dropdown-menu.settings-menu(style="margin-top: 35px")
+                li
+                  a(href='/help',target='_blank')
+                    i.fa.fa-question.fa-lg
+                    |  Help
+                li
+                  a(href='/change')
+                    i.fa.fa-cog.fa-lg
+                    |  Settings
+                li
+                  a(href='/logout')
+                    i.fa.fa-sign-out.fa-lg
+                    |  Logout
+
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+            //-     if !user.profilepic
+            //-       img.img-circle(src="profilepics/" +user.rollno+ ".jpg", width='80')
+            //-     else
+            //-       img.img-circle(src='img/user.jpg', width='80')
+            //- h5.centered 
+            //-   p.sname= user.name
+            //- li.mt
+            //-   a.active(data-toggle='tab', href='#calen')
+            //-     i.fa.fa-list
+            //-     span Events
+
+            li.sub-menu
+              a(data-toggle='tab', href='#holy')
+                i.fa.fa-calendar
+                span List of holidays 
+              //
+                                      <ul class="sub">
+                                          <li><a  href="#"></a></li>
+                                      </ul>
+          // sidebar menu end
+      // sidebar end
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #calen.tab-pane.fade.in.active
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+
+                            i.fa.fa-list
+                          .panel-right.panel-icon.lovender-text
+                            p.text-muted.no-margin.text
+                              span
+                            Strong
+                              p.size-h1  Events
+                    .container(style='width: 100%;height:100%;')
+                    .content
+                      .calendar-container
+                        .calendar
+                          .year-header
+                            span#prev.left-button  〈 
+                            span#label.year
+                            span#next.right-button  〉 
+                          table.months-table
+                            tbody
+                              tr.months-row
+                                td.month Jan
+                                td.month Feb
+                                td.month Mar
+                                td.month Apr
+                                td.month May
+                                td.month Jun
+                                td.month Jul
+                                td.month Aug
+                                td.month Sep
+                                td.month Oct
+                                td.month Nov
+                                td.month Dec
+                          table.days-table
+                            td.day Sun
+                            td.day Mon
+                            td.day Tue
+                            td.day Wed
+                            td.day Thu
+                            td.day Fri
+                            td.day Sat
+                          .frame
+                            table.dates-table
+                              tbody.tbody
+                          button#add-button(style='display:none').button Add Event
+                      .events-container
+                      #dialog.dialog
+                        h2.dialog-header  Add New Event 
+                        form#form.form
+                          .form-container(align='center')
+                            label#valueFromMyButton.form-label(for='name') Event name
+                            input#name.input(type='text', maxlength='36')
+                            label#valueFromMyButton.form-label(for='count') Description
+                            input#count.input(type='text', name='Description')
+                            input#cancel-button.button(type='button', value='Cancel')
+                            input#ok-button.button(type='button', value='OK')
+
+
+                #holy.tab-pane.fade
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-lovender
+    
+                            i.fa.fa-calendar
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span 
+                            Strong
+                              p.size-h2 Holidays 
+                  center
+                    .table-responsive
+                      .container
+                        h3 List of Holidays
+                        table#programs.table.table-bordered.table-hover.table-responsive.table-striped(style='width:70%')
+                          thead
+                            tr.course_head
+                              th.bg-info.text-center(style='width:3%') S.No
+                              th.bg-info.text-center(style='width:20%') Date
+                              th.bg-info.text-center(style='width:20%') Day
+                              th.bg-info.text-center(style='width:15%') Name of the Holiday
+                          tbody
+                            tr
+                              td.text-center 1
+                              td.text-center 26-06-2017
+                              td.text-center Monday
+                              td.text-left  <img src="icons/Ramadan.png" title="Ramadan" width="24" height="24">  Ramzan  
+                            tr
+                              td.text-center 2
+                              td.text-center 14-08-2017
+                              td.text-center Monday
+                              td.text-left  <img src="icons/Flute.png" title="Flute" width="24" height="24">  Krishnastami 
+                            tr
+                              td.text-center 3
+                              td.text-center 15-08-2017
+                              td.text-center Tuesday
+                              td.text-left  <img src="icons/Independence.png" title="India" width="24" height="24">  Independence Day
+                            tr
+                              td.text-center 4
+                              td.text-center 25-08-2017
+                              td.text-center Friday
+                              td.text-left  <img src="icons/Vinayaka.png" title="Elephant" width="20" height="20">  Vinayaka Chavithi
+                            tr
+                              td.text-center 5
+                              td.text-center 02-09-2017
+                              td.text-center Saturday
+                              td.text-left <img src="icons/Bakrid.png" title="Crescent Moon Filled" width="25" height="25">  Bakrid 
+                            tr
+                              td.text-center 6
+                              td.text-center 25-09-2017 to 30-09-2017
+                              td.text-center Monday to Saturday
+                              td.text-left  <img src="icons/Dasara.png" title="Temple" width="24" height="24">  Dasara Vacations
+                            tr
+                              td.text-center 7
+                              td.text-center 02-10-2017
+                              td.text-center Monday
+                              td.text-left  <img src="icons/Mahatma.png" title="Gandhi" width="24" height="24">  Mahatma Gandhi Jayanthi
+                            tr
+                              td.text-center 8
+                              td.text-center 19-10-2017
+                              td.text-center Wednesday
+                              td.text-left <img src="icons/Deepavali.png" title="Firework" width="34" height="34">  Deepavali
+                            tr
+                              td.text-center 9
+                              td.text-center 01-12-2017
+                              td.text-center Friday
+                              td.text-left  <img src="icons/Eid.png" title="Ramadan" width="24" height="24">  Eid Miladun Nabi
+                            tr
+                              td.text-center 10
+                              td.text-center 25-12-2017
+                              td.text-center Monday
+                              td.text-left <img src="icons/Christamas.png" title="Christmas Tree" width="24" height="24">  Christamas
+                            tr
+                              td.text-center 11
+                              td.text-center 01-01-2018
+                              td.text-center Monday
+                              td.text-left   <img src="icons/new.png" title="Gandhi" width="24" height="24">  New Year
+                            tr
+                              td.text-center 12
+                              td.text-center 13-01-2018 to 15-01-2018
+                              td.text-center Saturday to Monday
+                              td.text-left     <img src="icons/Pongal.png" title="Pongal" width="24" height="24">  Pongal Holidays
+                            tr
+                              td.text-center 13
+                              td.text-center 26-01-2018
+                              td.text-center Friday
+                              td.text-left    <img src="icons/Republic.png" title="India" width="24" height="24">  Republic Day
+                            tr
+                              td.text-center 14
+                              td.text-center 13-02-2018
+                              td.text-center Tuesday
+                              td.text-left   <img src="icons/Sivarathri.png" title="Mahasivaratri" width="24" height="24">  Maha Sivarathri 
+                            tr
+                              td.text-center 15
+                              td.text-center 02-03-2018
+                              td.text-center Friday
+                              td.text-left      <img src="icons/Holi.png" title="Holi" width="24" height="24">  Holi 
+                            tr
+                              td.text-center 16
+                              td.text-center 30-03-2018
+                              td.text-center Friday
+                              td.text-left    <img src="icons/Friday.png" title="Holi" width="24" height="24">  Good Friday
+                            tr
+                              td.text-center 17
+                              td.text-center 14-04-2018
+                              td.text-center Saturday
+                              td.text-left   <img src="icons/Ambedkar.png" title="Holi" width="18" height="24">  Ambedkar Jayanthi 
+                  
+      // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/calendar.js')
+    script(src='assets/js/common-scripts.js')
+    //External js
+    script(src='https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')
+    script(src='https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js')

@@ -1,0 +1,1085 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title Student Profile
+    link(type='../image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(href='../assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='../assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    // Custom styles for this template
+    link(href='../assets/css/style.css', rel='stylesheet')
+    link(href='../assets/css/style-responsive.css', rel='stylesheet')
+    script(type='text/javascript').
+      function valid()
+      {
+      var m1 = document.getElementById("months").value;
+      var y1 = document.getElementById("years").value;
+      var d = new Date();
+      var m = d.getMonth()+1;
+      var y = d.getFullYear();
+      var d1=new Date().getDate();
+      if(m1>=m||y1>y)
+      {
+      document.getElementById("message").innerHTML = "No Data Found";
+      }
+      else{
+      document.getElementById("message") .innerHTML = " ";
+      }
+      if(m1==(m-1))
+      {
+      if(d1<10)
+      document.getElementById("message") .innerHTML = "No Data Found";
+      }
+      }
+    style.
+      .header, #sidebar {
+      background: #2C3E50;
+      }
+      span {
+      font-size: 14px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .personal_details {
+      background-color: white;
+
+      }
+      .img-circle {
+      width:50px;
+      height:50px;
+      margin-top:0px;
+      border:2px solid lightgrey;
+      }
+      .img-circle1 {
+      width:100px;
+      height:100px;
+      margin-top:0px;
+      border-radius: 50%;
+      border:2px solid lightgrey;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      border-bottom: 2px solid #fd9f1b;
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+      }
+       .panel{
+        height: 30px;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .panel-box .size-h1 {
+      margin-top:7px;
+      }
+      .panel-box .fa {
+      margin-top:9px;
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      #name {
+      color: #B4886B;
+      font-weight: bold;
+      font-size:15px;
+      }
+      #wd
+      {
+      font-weight: bold;
+      font-family: Arial;
+      }
+      #heading{
+      text-align: center;
+      }
+      table thead th{
+      color: #B4886B;
+      font-weight: bold;
+      font-size:15px;
+      }
+      table tbody tr td{
+      color:grey;
+      text-align:left !important;
+      vertical-align:middle;
+      font-size:14px;
+      }
+      .data{
+        font-weight:bold;
+      }
+      @media print {
+        #Header, #Footer { display: none !important; }
+      }
+      @page { size: auto;  margin: 0mm; }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #section-to-print, #section-to-print * {
+          visibility: visible;
+        }
+        #section-to-print {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        #download {
+          visibility: hidden;
+        }
+      }      
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='/admin')
+          b
+            img(src='../myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+        // logo end
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/admin')
+                if !user.profilepic
+                  img.img-circle1(src="../profilepics/" +user.rollno+ ".jpg", width='150', height='150')
+                else
+                  img.img-circle1(src='../user.jpg', width='80')
+            h5.centered
+              p #{user.name}
+            li.sub-menu
+              a.active(data-toggle='tab', href='#profile')
+                i.fa.fa-address-card
+                span Profile
+                  // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #profile.tab-pane.fade.active.in(style='border: 10PX;    ')
+                  .row.dashboard-stats.container
+                    .col-md-2.col-sm-6.col-md-offset-8
+                        section.panel.panel-box
+                          .panel-left.panel-icon.bg-info
+
+                            i.fa.fa-address-card
+                          .panel-right.panel-icon.bg-reverse
+                            p.text-muted.no-margin.text
+                              span
+                            p.size-h1  Profile
+                  br
+                  .container#section-to-print(style='background-color: white;width: ;height:%;border-radius: 0px')
+                    .personal_details
+                      h3 Student Profile
+                    div(style="border-bottom: 2px solid #fd9f1b;")
+                      center
+                        if !user.profilepic
+                          div.col-md-2
+                            br
+                            img.img-circle1.img-center(src="../profilepics/" +user.rollno+ ".jpg", width="100",draggable="false")
+                      br
+                      h3.col-md-offset-3.col-xs-offset-5
+                        p.sname= user.name
+                      h5.col-md-offset-3.col-xs-offset-5
+                        p.Designation= user.dept
+                        p.College= user.college
+                      br
+                      br
+                    .table-responsive(style="margin-top: 15px;")
+                      table.table-bordered.table
+                        tbody
+                          tr
+                            td
+                              label#name Date Of Birth:
+                            td
+                              label#wd=user.dob
+                            td
+                              label#name Aadhaar No:
+                            td
+                              label#wd=user.Adharno
+                          tr
+                            td
+                              label#name Roll No:
+                            td
+                              label#wd=user.rollno
+                            td
+                              label#name D No:
+                            td
+                              label#wd=user.TemporaryDoorno
+                          tr
+                            td
+                              label#name Street:
+                            td
+                              label#wd=user.TemporaryStreet
+                            td
+                              label#name city:
+                            td
+                              label#wd=user.TemporaryCity
+                          tr
+                            td
+                              label#name Mobile No:
+                            td
+                              label#wd=user.mobile
+                            td
+                              label#name Email Id:
+                            td
+                              label#wd=user.email
+                          tr
+                            td
+                              label#name Semister:
+                            td
+                              label#wd=user.Semister
+                            td
+                              label#name Year:
+                            td
+                              label#wd=user.year
+
+                    // Educational Qualifications
+                    if user.SSC || user.Inter || user.Diploma || user.UG || user.PG || user.PHD || user.Others
+                      .personal_details
+                        h3 Educational Qualification
+                      .table-responsive
+                        table#sort.table-bordered.table
+                          tbody
+                            tr#heading
+                              td
+                                label#name Degree
+                              td
+                                label#name Institution
+                              td
+                                label#name Percentage
+                              td
+                                label#name Year of Pass
+
+                          if user.SSC
+                            tr
+                              td
+                                label#wd SSC
+                              td
+                                label#wd=user.SSC.Institution
+                              td.text-center
+                                label#wd=user.SSC.Percentage
+                              td.text-center.sort
+                                label#wd=user.SSC.YearOfPass
+                          if user.Inter
+                            tr
+                              td
+                                label#wd Intermediate
+                              td
+                                label#wd=user.Inter.Institution
+                              td.text-center
+                                label#wd=user.Inter.Percentage
+                              td.text-center.sort
+                                label#wd=user.Inter.YearOfPass
+                          if user.Diploma
+                            tr
+                              td
+                                label#wd Diploma
+                              td
+                                label#wd=user.Diploma.Institution
+                              td.text-center
+                                label#wd=user.Diploma.Percentage
+                              td.text-center.sort
+                                label#wd=user.Diploma.YearOfPass
+                          if user.UG
+                            -for (var i = user.UG.length-1; i >=0; --i) {
+                              tr
+                                td
+                                  label#wd=user.UG[i].Course
+                                td
+                                  label#wd=user.UG[i].Institution
+                                td.text-center
+                                  label#wd=user.UG[i].Percentage
+                                td.text-center.sort
+                                  label#wd=user.UG[i].Year
+                              -}
+                    // Certifications
+                    if user.Certifications
+                      .personal_details
+                        h3 Certifications
+                      .table-responsive
+                        table#sort12.table-bordered.table
+                          tbody
+                            tr#heading
+                              td
+                                label#name Name
+                              td
+                                label#name Organisation
+                              td
+                                label#name Month
+                              td
+                                label#name Year
+                          if user.Certifications
+                            -for (var i = user.Certifications.length-1; i >=0; --i) {
+                              tr
+                                td
+                                  label#wd=user.Certifications[i].Name
+                                td.text-center
+                                  label#wd=user.Certifications[i].Org
+                                td.text-center
+                                  label#wd=user.Certifications[i].Month  
+                                td.text-center.sort12
+                                  label#wd=user.Certifications[i].Year
+                            -}
+
+                    // T-Hub Contributions
+                    if user.Thub
+                      .personal_details
+                        h3 T-Hub Contributions
+                      .table-responsive
+                        table#sort13.table-bordered.table
+                          tbody
+                            tr#heading
+                              td
+                                label#name Program Name
+                              td
+                                label#name Duration
+                              td
+                                label#name Month
+                              td
+                                label#name Year
+                          if user.Thub
+                            -for (var i = user.Thub.length-1; i >=0; --i) {
+                              tr
+                                td
+                                  label#wd=user.Thub[i].Program
+                                td.text-center
+                                  label#wd=user.Thub[i].Duration
+                                td.text-center
+                                  label#wd=user.Thub[i].Month  
+                                td.text-center.sort13
+                                  label#wd=user.Thub[i].Year
+                            -}
+                    // Project
+                    if user.Project
+                      .personal_details
+                        h3 Project Mentaring
+                      .table-responsive
+                        table#sort2.table-bordered.table
+                          tbody
+                            tr#heading
+                              td
+                                label#name Title
+                              td
+                                label#name Description
+                              td
+                                label#name Student
+                              td
+                                label#name From
+                              td
+                                label#name To
+                          if user.Project
+                            -for (var i = user.Project.length-1; i >=0; --i) {
+                              tr.removerow1
+                                td#eit
+                                  label#wd=user.Project[i].Title
+                                td.text-center#edes
+                                  label#wd=user.Project[i].Description
+                                td.text-center#es
+                                  label#wd=user.Project[i].Student
+                                td.text-center#ef
+                                  label#wd=user.Project[i].From
+                                td.text-center#et
+                                  label#wd=user.Project[i].To
+                            -}
+                    // Project
+                    if user.Projects
+                      .personal_details
+                        h3 Projects Completed
+                      .table-responsive
+                        table#sort2.table-bordered.table
+                          tbody
+                            tr#heading
+                              td
+                                label#name Title
+                              td
+                                label#name Description
+                              td
+                                label#name From
+                              td
+                                label#name To
+                          if user.Projects
+                            -for (var i = user.Projects.length-1; i >=0; --i) {
+                              tr.removerow1
+                                td.text-center#eitl
+                                  label#wd=user.Projects[i].Title1
+                                td.text-center#edesc
+                                  label#wd=user.Projects[i].Description1
+                                td.text-center#efr
+                                  label#wd=user.Projects[i].From1
+                                td.text-center#eto
+                                  label#wd=user.Projects[i].To1
+                            -}
+                    .personal_details
+                        h3 Social Media
+                    .table-responsive(style="margin-top: 15px;")
+                      table.table-bordered.table
+                        tbody
+                          tr
+                            td
+                              label#name Facebook
+                            td
+                              label#wd=user.Facebook
+                            td
+                              label#name Whatsapp No
+                            td
+                              label#wd=user.Whatsapp
+                          tr
+                            td
+                              label#name Twitter
+                            td
+                              label#wd=user.Twitter
+                            td
+                              label#name Instagram
+                            td
+                              label#wd=user.Instagram
+                          tr
+                            td
+                              label#name Google+
+                            td
+                              label#wd=user.Google
+                            td
+                              label#name LinkedIn
+                            td
+                              label#wd=user.LinkedIn
+                          tr
+                            td
+                              label#name Pinterest
+                            td
+                              label#wd=user.Pinterest
+                            td
+                              label#name YouTube Channel
+                            td
+                              label#wd=user.YouTube
+                          tr
+                            td 
+                              label#name Blog
+                            td(colspan="3")
+                              label#wd=user.Blog
+                    // Jobs Applied
+                    .personal_details
+                        h3 Jobs Applied
+                    .table-responsive
+                      table#cmp.table.table-bordered
+                        thead
+                          tr
+                            th
+                              label#name Logo
+                            th
+                              label#name Company Name
+                            th
+                              label#name Location
+                            th
+                              label#name Email        
+                            th 
+                              label#name Status                     
+                        tbody
+                          if user1
+                            each member in user1
+                              tr.odd.gradeA
+                                td(style="text-align:center")
+                                  a(href='/companydetails/'+member.company_name, target='_blank')
+                                    img.img-circle(src="../companies/" +member.company_name+ ".png", width='100', height='100')
+                                td
+                                  label#wd #{member.company_name}
+                                td 
+                                  label#wd #{member.location}
+                                td 
+                                  label#wd #{member.email}
+                                td 
+                                  label.bg-success#wd(style="padding:5px;") #{member.status}
+                    br
+                    br
+                    center
+                      input.btn.btn-info.btn-md#download(type='submit', name='profile', value='Download', onclick='window.print()')
+                    br
+                    br
+                br
+      // /MAIN CONTENT
+      // main content end
+      //
+        footer start--
+        <footer class="site-footer">
+        <div class="text-center">
+        2014 - Alvarez.is
+        <a href="blank.html#" class="go-top">
+        <i class="fa fa-angle-up"></i>
+        </a>
+        </div>
+        </footer>
+        <!--footer end
+
+    // js placed at the end of the document so the pages load faster
+    script(src='../assets/js/bootstrap.min.js')
+    script(src='../assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='../assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='../assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='../assets/js/jquery.scrollTo.min.js')
+    script(src='../assets/js/jquery.nicescroll.js', type='text/javascript')
+    script(src='../assets/js/jquery.js')
+    // common script for all pages
+    script(src='../assets/js/common-scripts.js')
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
+    script(src='https://code.jquery.com/jquery-2.2.0.min.js')
+    //script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(src='javascripts/jquery.alerts.js', type='text/javascript')
+    script(src='javascripts/jquery.noty.packaged.js', type='text/javascript')
+    script(src='js/bootstrap-notify.js')
+    script(src='js/bootstrap-notify.min.js')
+    script(src='javascripts/education.js')
+    script(src='js/month.js')
+    script(src='js/preventcontrol.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js')
+    script.
+       $(function(){
+        var dtToday = new Date();
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+        var maxDate = year + '-' + month + '-' + day;
+        $('#exto').attr('max', maxDate);
+         $('#exfrom').attr('max', maxDate);
+        });
+    script.
+      //current date display
+      $("#datenow").val((new Date()).toString().split(' ').splice(1,3).join(' ')); 
+      $('option[value=""]').attr("disabled", "disabled");
+       
+       // Joining date conversion
+       var from = '#{user.DateOfJoining}'
+       var joiningDate = convertDate(from);
+
+       // Today date conversion
+       var todate=new Date();
+       var todayDate = convertDate(todate.toDateString());
+
+       stringToDate(joiningDate,"DD/MM/YYYY","/");
+       stringToDate(todayDate,"DD/MM/YYYY","/");
+
+       var noMonths = calcDate(stringToDate(joiningDate,"DD/MM/YYYY","/"),stringToDate(todayDate,"DD/MM/YYYY","/"));
+
+       $(document).ready(function(){
+        $('#months').val(noMonths);
+       });
+        
+        // Converting String to String with date format
+          function convertDate(inputFormat) {
+            function pad(s) { return (s < 10) ? '0' + s : s; }
+            var d = new Date(inputFormat);
+            var convertedDate=[pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+            return convertedDate;
+          }
+
+          // Conert String to Date
+          function stringToDate(_date,_format,_delimiter)
+          {
+              var formatLowerCase=_format.toLowerCase();
+              var formatItems=formatLowerCase.split(_delimiter);
+              var dateItems=_date.split(_delimiter);
+              var monthIndex=formatItems.indexOf("mm");
+              var dayIndex=formatItems.indexOf("dd");
+              var yearIndex=formatItems.indexOf("yyyy");
+              var month=parseInt(dateItems[monthIndex]);
+              month-=1;
+              var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
+              return formatedDate;
+            }
+
+          //Calculating Month Year based on date
+          function calcDate(date1,date2) {
+            var diff = Math.floor(date2.getTime() - date1.getTime());
+            var day = 1000 * 60 * 60 * 24;
+            var days = Math.floor(diff/day);
+            var day_age = Math.floor((diff % 31536000000) / 86400000);
+            var months = Math.floor(day_age/30);
+            var month = Math.floor(days/31);
+            var years = Math.floor(diff / 31536000000);
+            var message = ""
+            message += years + " years "
+            message +=""
+            message +=""
+            message +=""
+            message +=""
+            message += months + " months "
+            return message
+            }
+
+         //Family dob validation
+         $('#fdob,#mdob,#sdob,#k1dob,#k2dob,#k3dob').datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+
+        //From date validation 
+        $('.fromdate').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+
+        //To date validation
+        $('.todate').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-80:+0",
+             maxDate:'0'
+        });
+        $(document).ready(function(){
+        //Date Conversion
+        $('.fromdate').datepicker().bind("change", function () {
+            var minValue = $(this).val();
+            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+            $('.todate').datepicker("option", "minDate", minValue);
+            calculate();
+        });
+        $('.todate').datepicker().bind("change", function () {
+            var maxValue = $(this).val();
+            maxValue = $.datepicker.parseDate("yy-mm-dd", maxValue);
+            $('.fromdate').datepicker("option", "maxDate", maxValue);
+            calculate();
+        });
+
+        //Date Calculation and dispaly in Experience field
+        function calculate() {
+            var d1 = $('.fromdate').datepicker('getDate');
+            var d2 = $('.todate').datepicker('getDate');
+            var oneDay = (24*60*60*1000)/30;
+            var diff = 0;
+            if (d1 && d2) {
+              diff = Math.round(Math.abs((d2.getTime() - d1.getTime())/(oneDay)));
+            }
+            var diff1 = calcDate(d1,d2);
+            $('#exyears').val(diff1);
+            $('.minim').val(d1)
+        }  
+
+        //On Option Select Kid2 div Display
+        $("#s1").change(function(){
+          if($(this).val() == 'Kid2'){
+            $("#box2").show();
+          }else{
+            $("#box2").hide();
+          }
+          $(this).val('Kid1'); 
+      }); 
+
+      //On Option Select Kid3 div Display
+      $("#s2").change(function(){
+          if($(this).val() == 'Kid3'){
+            $("#box3").show();
+          }else{
+            $("#box3").hide();
+          }
+          $(this).val('Kid2');
+      });   
+      });
+
+      //Uppercase Passport Number
+      $('#passportno').keyup(function(){
+       this.value = this.value.toUpperCase();
+      });
+      function JSalert(){
+        swal({
+        title: "Your data was saved sucessfully!",
+        text: "",
+        timer: 1500,
+        showConfirmButton: false
+      });
+      }
+    script.
+      function sortNum(a, b) {
+        return 1 * $(a).find('.sort').text() < 1 * $(b).find('.sort').text() ? 1 : 0;
+        }
+        function sortTheTable(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort)').remove())
+                
+                elems.sort(sortNum)
+                $('table#sort').append($(elems));
+            });
+        }
+
+         sortTheTable();
+    script.
+      function sortNum1(a, b) {
+        return 1 * $(a).find('.sort1').text() < 1 * $(b).find('.sort1').text() ? 1 : 0;
+        }
+        function sortTheTable1(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort1)').remove())
+                
+                elems.sort(sortNum1)
+                $('table#sort1').append($(elems));
+            });
+        }
+
+         sortTheTable1();
+    script.
+      function sortNum2(a, b) {
+        return 1 * $(a).find('.sort2').text() < 1 * $(b).find('.sort2').text() ? 1 : 0;
+        }
+        function sortTheTable2(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort2)').remove())
+                
+                elems.sort(sortNum2)
+                $('table#sort2').append($(elems));
+            });
+        }
+
+         sortTheTable2();
+    script.
+      function sortNum2(a, b) {
+        return 1 * $(a).find('.sort2').text() < 1 * $(b).find('.sort2').text() ? 1 : 0;
+        }
+        function sortTheTable2(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort2)').remove())
+                
+                elems.sort(sortNum2)
+                $('table#sort2').append($(elems));
+            });
+        }
+
+         sortTheTable3();
+    script.
+      function sortNum3(a, b) {
+        return 1 * $(a).find('.sort3').text() < 1 * $(b).find('.sort3').text() ? 1 : 0;
+        }
+        function sortTheTable3(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort3)').remove())
+                
+                elems.sort(sortNum3)
+                $('table#sort3').append($(elems));
+            });
+        }
+
+         sortTheTable3();
+    script.
+      function sortNum4(a, b) {
+        return 1 * $(a).find('.sort4').text() < 1 * $(b).find('.sort4').text() ? 1 : 0;
+        }
+        function sortTheTable4(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort4)').remove())
+                
+                elems.sort(sortNum4)
+                $('table#sort4').append($(elems));
+            });
+        }
+
+         sortTheTable4();
+    script.
+      function sortNum5(a, b) {
+        return 1 * $(a).find('.sort5').text() < 1 * $(b).find('.sort5').text() ? 1 : 0;
+        }
+        function sortTheTable5(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort5)').remove())
+                
+                elems.sort(sortNum5)
+                $('table#sort5').append($(elems));
+            });
+        }
+
+         sortTheTable5();
+    script.
+      function sortNum6(a, b) {
+        return 1 * $(a).find('.sort6').text() < 1 * $(b).find('.sort6').text() ? 1 : 0;
+        }
+        function sortTheTable6(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort6)').remove())
+                
+                elems.sort(sortNum6)
+                $('table#sort6').append($(elems));
+            });
+        }
+
+         sortTheTable6();
+    script.
+      function sortNum7(a, b) {
+        return 1 * $(a).find('.sort7').text() < 1 * $(b).find('.sort7').text() ? 1 : 0;
+        }
+        function sortTheTable7(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort7)').remove())
+                
+                elems.sort(sortNum7)
+                $('table#sort7').append($(elems));
+            });
+        }
+
+         sortTheTable2();
+    script.
+      function sortNum8(a, b) {
+        return 1 * $(a).find('.sort8').text() < 1 * $(b).find('.sort8').text() ? 1 : 0;
+        }
+        function sortTheTable8(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort8)').remove())
+                
+                elems.sort(sortNum8)
+                $('table#sort8').append($(elems));
+            });
+        }
+
+         sortTheTable8();
+    script.
+      function sortNum9(a, b) {
+        return 1 * $(a).find('.sort9').text() < 1 * $(b).find('.sort9').text() ? 1 : 0;
+        }
+        function sortTheTable9(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort9)').remove())
+                
+                elems.sort(sortNum9)
+                $('table#sort9').append($(elems));
+            });
+        }
+
+         sortTheTable9();
+    script.
+      function sortNum10(a, b) {
+        return 1 * $(a).find('.sort10').text() < 1 * $(b).find('.sort10').text() ? 1 : 0;
+        }
+        function sortTheTable10(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort10)').remove())
+                
+                elems.sort(sortNum10)
+                $('table#sort10').append($(elems));
+            });
+        }
+
+         sortTheTable10();
+    script.
+      function sortNum11(a, b) {
+        return 1 * $(a).find('.sort11').text() < 1 * $(b).find('.sort11').text() ? 1 : 0;
+        }
+        function sortTheTable11(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort11)').remove())
+                
+                elems.sort(sortNum11)
+                $('table#sort11').append($(elems));
+            });
+        }
+
+         sortTheTable11();
+    script.
+      function sortNum12(a, b) {
+        return 1 * $(a).find('.sort12').text() < 1 * $(b).find('.sort12').text() ? 1 : 0;
+        }
+        function sortTheTable12(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort12)').remove())
+                
+                elems.sort(sortNum12)
+                $('table#sort12').append($(elems));
+            });
+        }
+
+         sortTheTable12();
+    script.
+      function sortNum13(a, b) {
+        return 1 * $(a).find('.sort13').text() < 1 * $(b).find('.sort13').text() ? 1 : 0;
+        }
+        function sortTheTable13(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.sort13)').remove())
+                
+                elems.sort(sortNum13)
+                $('table#sort13').append($(elems));
+            });
+        }
+
+         sortTheTable13();
+    script.
+      function cmpNum(a, b) {
+        return 1 * $(a).find('.cmp').text() < 1 * $(b).find('.cmp').text() ? 1 : 0;
+        }
+        function sortTheTable13(){
+            $(function() {
+                var elems = $.makeArray($('tr:has(.cmp)').remove())
+                
+                elems.sort(cmp)
+                $('table#cmp').append($(elems));
+            });
+        }
+
+         sortThecmp();

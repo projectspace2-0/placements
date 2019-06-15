@@ -1,0 +1,3895 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='Dashboard')
+    meta(name='keyword', content='Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina')
+    title ADMIN      
+    link(type='image/png', href='adityalogo.png', rel='icon')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    link(href='assets/css/calendar.css', rel='stylesheet')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    // css link
+    link(rel='stylesheet', type='text/css', href='https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css')
+    link(rel='stylesheet', type='text/css', href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css')    
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='https://cdn.datatables.net/buttons/1.3.1/css/buttons.dataTables.min.css')
+    script(src='assets/js/amcharts.js')
+    script(src='https://www.amcharts.com/lib/3/serial.js')
+    script(src='https://www.amcharts.com/lib/3/plugins/export/export.min.js')
+    link(rel='stylesheet', href='https://www.amcharts.com/lib/3/plugins/export/export.css', type='text/css', media='all')
+    script(src='https://www.amcharts.com/lib/3/themes/light.js')
+
+    style.
+      /*  .header, #sidebar {
+      background: #2C3E50;
+      }*/
+      span {
+      font-size: 14px;
+      }
+      .file-uploader {
+      background-color: #dbefe9;
+      border-radius: 3px;
+      color: #242424;
+      }
+      .file-uploader__message-area {
+      font-size: 18px;
+      padding: 1em;
+      text-align: center;
+      color: #377a65;
+      }
+      .file-list {
+      background-color: white;
+      font-size: 16px;
+      }
+      .file-list__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      .file-list li {
+      height: 50px;
+      line-height: 50px;
+      margin-left: .5em;
+      border: none;
+      overflow: hidden;
+      }
+      .removal-button {
+      width: 20%;
+      border: none;
+      background-color: #d65d38;
+      color: white;
+      }
+      .removal-button::before {
+      content: "X";
+      }
+      .removal-button:focus {
+      outline: 0;
+      }
+      .file-chooser {
+      padding: 1em;
+      transition: background-color 1s, height 1s;
+      }
+      .file-chooser p {
+      font-size: 18px;
+      padding-top: 1em;
+      }
+      .file-uploader {
+      max-width: 400px;
+      height: auto;
+      margin: 2em auto;
+      }
+      .file-uploader * {
+      display: block;
+      }
+      .file-uploader input[type=submit] {
+      margin-top: 2em;
+      float: right;
+      }
+      .file-list {
+      margin: 0 auto;
+      max-width: 90%;
+      }
+      .file-list__name {
+      max-width: 70%;
+      float: left;
+      }
+      .removal-button {
+      display: inline-block;
+      height: 100%;
+      float: right;
+      }
+      .file-chooser {
+      width: 90%;
+      margin: .5em auto;
+      }
+      .file-chooser__input {
+      margin: 0 auto;
+      }
+      .file-uploader__submit-button {
+      width: 100%;
+      border: none;
+      font-size: 1.5em;
+      padding: 1em;
+      background-color: #72bfa7;
+      color: white;
+      }
+      .file-uploader__submit-button:hover {
+      background-color: #a7d7c8;
+      }
+      .file-list li:after, .file-uploader:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+      .hidden {
+      display: none;
+      }
+      .hidden input {
+      display: none;
+      }
+      .error {
+      background-color: #d65d38;
+      color: white;
+      }
+      *, *::before, *::after {
+      box-sizing: border-box;
+      }
+      ul, li {
+      margin: 0;
+      padding: 0;
+      }
+      .personal_details {
+      background-color: white;
+      border-left:4px solid #fd9f1b;
+      }
+      .personal_details h3 {
+      padding: 10px;
+      }
+      .navbar h2 {
+      color:#fd9f1b;
+      }
+      .user {
+      font-family:;
+      }
+      .row a {
+      text-decoration: none;
+      color: black;
+      }
+      .panel-box {
+      /*display: table;*/
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      border: medium none;
+      margin-left: 15px;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: 29px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      border:1px solid red;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #000 !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .bg-danger {
+      background-color: #FF7857 !important;
+      color: #000 !important;
+      }
+      .danger-text {
+      color: #000;
+      }
+      .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #000 !important;
+      }
+      .lovender-text {
+      color: #000;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #000 !important;
+      }
+      .info-text {
+      color: #000;
+      }
+      .size-h1 {
+      font-size: 20px;
+      }
+      .panel-icon p.text {
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      }
+      .panel-icon i {
+      text-align: center;
+      }
+      .panel-icon i {
+      text-align: center;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      .glyphicon, .fa {
+      font-size: 50px;
+      }
+      .glyphicon-off {
+      font-size: 20px;
+      }
+      .col-lg-12 {
+      color:black;
+      }
+      /*.panel:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+      }*/
+      .header .top-menu ul li a {
+      background-color: #2C3E50;
+      border: 1px solid #2C3E50;
+      }
+      .header .top-menu ul li {
+      border-color: 1px solid #2C3E50;
+      }
+      .show-overlay, .show-modal{
+      display:block !important;
+      transition: all 0.5s ease 0s;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .find{
+      display:none;
+      }
+      /************ Button ************/
+      .button-container{
+      position:relative;
+      margin:0 auto;
+      width:200px;
+      height:150px;
+      top:150px;
+      z-index:1;
+      }
+      .blue-button{
+      position:relative;
+      background-color: #FF7857;
+      color:#fff;
+      font-family: "Proxima Nova";
+      font-size:16px;
+      padding:10px;
+      width:5%;
+      cursor:pointer;
+      border-radius: 2px 2px 2px 2px;
+      -moz-border-radius: 2px 2px 2px 2px;
+      -webkit-border-radius: 2px 2px 2px 2px;
+      border: 0px solid #000000;
+      }
+      /************ Modal ************/
+      .modal-contain{
+      position:absolute;
+      margin:0 auto;
+      height: auto;
+      width:auto;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border: 0px solid #000000;
+      background-color: #fff;
+      border-left:15px solid #7ACBEE;
+      display:none;
+      z-index:101;
+      left:40%;
+      top:15%;
+      -webkit-box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+      -moz-box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+      box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+      }
+      #modal h4{
+      position:relative;
+      padding:35px 25px 5px 25px;
+      font-size:20px;
+      font-weight:100;
+      margin:0;
+      color:#000;
+      width:90%;
+      height: auto;
+      }
+      #modal p{
+      position:relative;
+      font-size:14px;
+      padding:25px;
+      margin:0;
+      line-height:24px;
+      width:89%;
+      border-top:solid 1px #D1D1D1;
+      height: auto;
+      }
+      .p{
+      position:relative;
+      font-size:14px;
+      padding:25px;
+      margin:0;
+      line-height:24px;
+      width:89%;
+      height: auto;
+      }
+      .wrapper12 {
+      width: 100%;
+      height: 100%;
+      }
+      .modal-contain button.blue-button{
+      width:100%;
+      margin: 0 0 30px 25px;
+      }
+      .message-box{
+        background:#fff url(https://s3.amazonaws.com/flashypublic/mail-header-bg.png) no-repeat top left;
+        padding-top:40px;
+        padding-bottom:20px;
+        padding-left:20px;
+        padding-right:20px;
+        border-bottom-left-radius:7px;
+        border-bottom-right-radius:7px;
+        -moz-border-radius-bottomleft:7px;
+        -moz-border-radius-bottomright:7px;
+      }
+      .message-shadow{
+        background:transparent url(https://s3.amazonaws.com/flashypublic/mail-footer-bg.png) no-repeat center top;
+        height:24px;
+        clear:both;
+      }
+      .message-icon{
+        float:left;
+        width:80px;
+        display:inline;
+        margin-right:25px;
+      }
+      .message-content{
+        float:left;
+        display:inline;
+        width:484px;
+      }
+      .clear{clear:both;}
+      .container{
+        width:629px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:10%;
+      }
+      /************ BounceIn Animation ************/
+      .bounceIn-animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+      .bounceIn-animated.infinite {
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      }
+      .bounceIn-animated.hinge {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+      }
+      /*the animation definition*/
+      @-webkit-keyframes bounceInDown {
+      0%, 100%, 60%, 75%, 90% {
+      -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+      transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+      }
+      0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100px, 0);
+      transform: translate3d(0, -100px, 0)
+      }
+      60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0)
+      }
+      75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0)
+      }
+      90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0)
+      }
+      100% {
+      -webkit-transform: none;
+      transform: none
+      }
+      }
+      @keyframes bounceInDown {
+      0%, 100%, 60%, 75%, 90% {
+      -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+      transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+      }
+      0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100px, 0);
+      -ms-transform: translate3d(0, -100px, 0);
+      transform: translate3d(0, -100px, 0)
+      }
+      60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 10px, 0);
+      -ms-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0)
+      }
+      75% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      -ms-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0)
+      }
+      90% {
+      -webkit-transform: translate3d(0, 5px, 0);
+      -ms-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0)
+      }
+      100% {
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none
+      }
+      }
+      .bounceInDown {
+      -webkit-animation-name: bounceInDown;
+      animation-name: bounceInDown
+      }
+      /************ BounceOut Animation ************/
+      .bounceOutUp-animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+      /*the animation definition*/
+      @-webkit-keyframes bounceOutUp {
+      20% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0)
+      }
+      40%,  45% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0)
+      }
+      100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100px, 0);
+      transform: translate3d(0, -100px, 0)
+      }
+      }
+      @keyframes bounceOutUp {
+      20% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      -ms-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0)
+      }
+      40%,  45% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 5px, 0);
+      -ms-transform: translate3d(0, 5px, 0);
+      transform: translate3d(0, 5px, 0)
+      }
+      100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100px, 0);
+      -ms-transform: translate3d(0, -100px, 0);
+      transform: translate3d(0, -100px, 0)
+      }
+      }
+      .bounceOutUp {
+      -webkit-animation-name: bounceOutUp;
+      animation-name: bounceOutUp
+      }
+      .modal-overlay{
+      position:fixed;
+      background-color: #000;
+      opacity: 0.8;
+      display:none;
+      height:100%;
+      width: 100%;
+      z-index:100;
+      margin:0 auto;
+      padding:0;
+      top:0%;
+      }
+      p a:hover{
+      text-decoration:none;
+      }
+      @media only screen and (min-width: 320px) and (max-width:600px) {
+      .modal-contain{
+      left:0.5%;
+      }
+      }
+      .aditya_logo{
+      height: 100px;
+      }
+      .content-row{
+      width: 89%;
+      float: right;
+      height: 100px;
+      margin:0px;
+      }
+      @media only screen and (max-width: 199px){
+      .aditya_logo{
+      height: 30px;
+      }
+      .content-row{
+      width: 100%;
+      float: right;
+      height: 30px;
+      }
+      }
+      @media only screen and (min-width: 200px)
+      and (max-width:300px) {
+      .aditya_logo{
+      height: 30px;
+      }
+      .content-row{
+      width: 100%;
+      float: right;
+      height: 35px;
+      }
+      }
+      @media only screen and (min-width: 301px)
+      and (max-width:468px) {
+      .aditya_logo{
+      height: 45px;
+      }
+      .content-row{
+      width: 100%;
+      float: right;
+      height: 50px;
+      }
+      }
+      @media only screen and (min-width: 469px)
+      and (max-width:600px) {
+      .aditya_logo{
+      height: 50px;
+      }
+      .content-row{
+      width: 100%;
+      float: right;
+      height: 70px;
+      }
+      }
+      @media only screen and (min-width: 601px)
+      and (max-width:768px) {
+      .aditya_logo{
+      height: 60px;
+      }
+      .content-row{
+      width: 100%;
+      float: right;
+      height: 75px;
+      }
+      }
+      @media only screen and (min-width: 769px)
+      and (max-width:803px) {
+      .aditya_logo{
+      height: 80px;
+      }
+      .content-row{
+      width: 73%;
+      float: right;
+      height: 60px;
+      }
+      }
+      @media only screen and (min-width: 804px)
+      and (max-width:901px) {
+      .aditya_logo{
+      height: 80px;
+      }
+      .content-row{
+      width: 76%;
+      float: right;
+      height: 65px;
+      }
+      }
+      @media only screen and (min-width: 902px)
+      and (max-width:999px) {
+      .aditya_logo{
+      height: 80px;
+      }
+      .content-row{
+      width: 78%;
+      float: right;
+      height: 75px;
+      }
+      }
+      @media only screen and (min-width: 1000px)
+      and (max-width:1100px) {
+      .aditya_logo{
+      height: 90px;
+      }
+      .content-row{
+      width: 80%;
+      float: right;
+      height: 80px;
+      }
+      }
+      @media only screen and (min-width: 1101px)
+      and (max-width:1200px) {
+      .aditya_logo{
+      height: 90px;
+      }
+      .content-row{
+      width: 82%;
+      float: right;
+      height: 90px;
+      }
+      }
+      @media only screen and (min-width: 1201px)
+      and (max-width:1400px) {
+      .aditya_logo{
+      height: 90px;
+      }
+      .content-row{
+      width: 84%;
+      float: right;
+      height: 90px;
+      }
+      }
+      @media only screen and (min-width: 1401px)
+      and (max-width:1600px) {
+      .aditya_logo{
+      height: 90px;
+      }
+      .content-row{
+      width: 86%;
+      float: right;
+      height: 90px;
+      }
+      }
+      .colleges tbody tr td{
+      vertical-align: middle;
+      }
+      .colleges tbody tr td img{
+      vertical-align: middle;
+      }
+      .table-striped tbody tr td{
+        vertical-align:middle;
+        text-align:center;
+      }
+      .table-striped tr th{
+        vertical-align:middle;
+        text-align:center;
+      }
+      /*!
+      * bootstrap-vertical-tabs - v1.2.1
+      * https://dbtek.github.io/bootstrap-vertical-tabs
+      * 2014-11-07
+      * Copyright (c) 2014 İsmail Demirbilek
+      * License: MIT
+      */
+      .tabs-left, .tabs-right {
+      border-bottom: none;
+      padding-top: 2px;
+      }
+      .tabs-left {
+      border-right: 1px solid #ddd;
+      }
+      .tabs-right {
+      border-left: 1px solid #ddd;
+      }
+      .tabs-left>li, .tabs-right>li {
+      float: none;
+      margin-bottom: 2px;
+      }
+      .tabs-left>li {
+      margin-right: -1px;
+      }
+      .tabs-right>li {
+      margin-left: -1px;
+      }
+      .tabs-left>li.active>a,
+      .tabs-left>li.active>a:hover,
+      .tabs-left>li.active>a:focus {
+      border-bottom-color: #ddd;
+      border-right-color: transparent;
+      }
+      .tabs-right>li.active>a,
+      .tabs-right>li.active>a:hover,
+      .tabs-right>li.active>a:focus {
+      border-bottom: 1px solid #ddd;
+      border-left-color: transparent;
+      }
+      .tabs-left>li>a {
+      border-radius: 4px 0 0 4px;
+      margin-right: 0;
+      display:block;
+      }
+      .tabs-right>li>a {
+      border-radius: 0 4px 4px 0;
+      margin-right: 0;
+      }
+      .sideways {
+      margin-top:50px;
+      border: none;
+      position: relative;
+      }
+      .sideways>li {
+      height: 20px;
+      width: 120px;
+      margin-bottom: 100px;
+      }
+      .sideways>li>a {
+      border-bottom: 1px solid #ddd;
+      border-right-color: transparent;
+      text-align: center;
+      border-radius: 4px 4px 0px 0px;
+      }
+      .sideways>li.active>a,
+      .sideways>li.active>a:hover,
+      .sideways>li.active>a:focus {
+      border-bottom-color: transparent;
+      border-right-color: #ddd;
+      border-left-color: #ddd;
+      }
+      .sideways.tabs-left {
+      left: -50px;
+      }
+      .sideways.tabs-right {
+      right: -50px;
+      }
+      .sideways.tabs-right>li {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      }
+      .sideways.tabs-left>li {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      }
+      .box:hover{
+      cursor:pointer;
+      box-shadow: 1px 1px 10px 1px lightgrey;
+      }
+    // Styles
+    style.
+      #chartdiv {
+      width: 100%;
+      height: 500px;
+      }
+      .amcharts-export-menu-top-right {
+      top: 10px;
+      right: 0;
+      }
+      #checkbox{
+        height:20px;
+        width:20px;
+      }
+      .img-circle {
+      width:50px;
+      height:50px;
+      margin-top:0px;
+      border:2px solid lightgrey;
+      }
+      table thead th{
+      color: #B4886B;
+      font-weight: bold;
+      font-size:15px;
+      }
+      table tbody tr td{
+      color:grey;
+      font-size:14px;
+      vertical-align:middle !important;
+      text-align:center;
+      }
+
+  body
+    section#container
+      // header start
+      header.header.black-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
+        // logo start
+        a.logo(href='#')
+          b
+            img(src='/myhub_logo.png', style='height:55px; width:100px; margin-top:-13px;')
+        // logo end
+        .top-menu
+          ul.nav.pull-right.top-menu
+            li
+              a.logout(href='/adminlogout') Logout
+      // header end
+      //
+        **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        ***********************************************************************************************************************************************************
+      // sidebar start
+      aside
+        #sidebar.nav-collapse
+          // sidebar menu start
+          ul#nav-accordion.sidebar-menu
+            p.centered
+              a(href='/dashbord')
+                //
+                  if !user.profilepic//img.img-circle(src="profilepics/" +user.StaffCode+ ".jpg", width='80')
+                //
+                  else//img.img-circle(src='img/user.jpg', width='80')
+            h5.centered
+              // p.sname= user.StaffName
+            li.mt
+              a.active(data-toggle='tab', href='#dashboard')
+                i.fa.fa-tachometer
+                span Dashboard
+            li.sub-menu
+              a(data-toggle='tab', href='#notices')
+                i.fa.fa-bullhorn
+                span Notices
+            //li.sub-menu
+              a(data-toggle='tab', href='#reports')
+                i.fa.fa-list
+                span Reports
+            //li.sub-menu
+              a(data-toggle='tab', href='#companies')
+                i.fa.fa-building-o
+                span Companies
+            //li.sub-menu
+              a(data-toggle='tab', href='#college')
+                i.fa.fa-university
+                span Colleges
+            //li.sub-menu
+              a(data-toggle='tab', href='#students')
+                i.fa.fa-users
+                span Total Students
+            li.sub-menu
+              a(data-toggle='tab', href='#enrolled')
+                i.fa.fa-users
+                span Applied Students
+            li.sub-menu
+              a(data-toggle='tab', href='#placements')
+                i.fa.fa-mortar-board
+                span Interview Rounds
+            li.sub-menu
+              a(data-toggle='tab', href='#selected')
+                i.fa.fa-users
+                span Placed Students
+            li.sub-menu
+              a(data-toggle='tab', href='#profile')
+                i.fa.fa-book
+                span Student Profile
+            //li.sub-menu
+              a(data-toggle='tab', href='#excel')
+                i.fa.fa-file-excel-o
+                span Excel Templates
+            li.sub-menu
+              a(data-toggle='tab', href='#admin')
+                i.fa.fa-lock
+                span Admin
+            li.sub-menu
+              a(data-toggle='tab', href='#companyadmin')
+                i.fa.fa-lock
+                span Company Admin
+            li.sub-menu
+              a(data-toggle='tab', href='#calendar')
+                i.fa.fa-calendar
+                span Calendar
+          // sidebar menu end
+      // sidebar end
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      section#main-content
+        section.wrapper.site-min-height
+          h3
+            i
+          .row.mt
+            .col-lg-12
+              .tab-content
+                #dashboard.tab-pane.fade.in.active
+                  center
+                    .row.text-center
+                      .col-lg-3.col-md-3.col-sm-12.col-xs-12(style='margin-bottom:5px;')
+                        .col-md-6.col-sm-6.col-xs-6.bg-success(style='padding: 25px;')
+                          span
+                            i.fa.fa-users(style='')
+                        .col-md-6.col-sm-6.col-xs-6(style='padding: 25px; background: white;')
+                          p.no-margin.text
+                            span#std
+                          p.size-h2
+                            b Students
+                        .clearfix
+                      .col-lg-3.col-md-3.col-sm-12.col-xs-12(style='margin-bottom:5px;')
+                        .col-md-6.col-sm-6.col-xs-6.bg-danger(style='padding: 25px;')
+                          span
+                            i.fa.fa-user(style='')
+                        .col-md-6.col-sm-6.col-xs-6(style='padding: 25px; background: white;')
+                          p.no-margin.text
+                            span#app
+                          p.size-h2
+                            b Applied
+                        .clearfix
+                      .col-lg-3.col-md-3.col-sm-12.col-xs-12(style='margin-bottom:5px;')
+                        .col-md-6.col-sm-6.col-xs-6.bg-lovender(style='padding: 25px;')
+                          span
+                            i.fa.fa-thumbs-up(style='')
+                        .col-md-6.col-sm-6.col-xs-6(style='padding: 25px; background: white;')
+                          p.no-margin.text
+                            span#ele
+                          p.size-h2
+                            b Eligible
+                        .clearfix
+                      .col-lg-3.col-md-3.col-sm-12.col-xs-12(style='margin-bottom:5px;')
+                        .col-md-6.col-sm-6.col-xs-6.bg-info(style='padding: 25px;')
+                          span
+                            i.fa.fa-mortar-board(style='')
+                        .col-md-6.col-sm-6.col-xs-6(style='padding: 25px; background: white;')
+                          p.no-margin.text
+                            span#pla
+                          p.size-h2
+                            b Placed
+                        .clearfix
+                      br
+                      br
+                    .row
+                      .col-md-12.clearfix(style="background-color: #fff; margin: 10px;")
+                        .col-md-12.col-xs-12
+                          .col-md-6.col-xs-12.pull-left.text-center
+                            h3(style="display:inline-block") Department Wise Placements : &nbsp;
+                            h3(style="display:inline-block")#printCollege
+                          .col-md-3.col-sm-5.col-xs-12.pull-right.text-center(style="padding: 6px;")
+                            select#branchStatistics.form-control
+                              option(value='') --select--
+                              option(value='AEC' selected) Aditya Engineering College
+                              option(value='ACET') Aditya College of Engineering and Technology
+                              option(value='ACOE') Aditya College of Engineering
+                        .col-md-12.col-xs-12
+                          // HTML
+                          #chartdiv
+                  //.container(style='background-color: white;width: 100%;height:100%;')
+                #admin.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .col-md-10.col-md-offset-1
+                      h2 Admin
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#home') Add Students
+                        li
+                          a(data-toggle='tab', href='#menu1') Add Multiple Students
+                        li
+                      .tab-content
+                        #home.tab-pane.fade.in.active
+                          .container(style='width: 100%;height:100%;')
+                          .col-md-12
+                            h2(style='padding-bottom:25px; border-bottom:1px solid lightgrey;') Add Student details
+                          form.form-group(method='post', action='/addstudent' name='add_placement')
+                            .col-md-10.col-md-offset-1
+                              .row
+                                .col-md-2.col-sm-3.col-xs-6.col-md-offset-0.col-xs-offset-3.text-center
+                                .col-md-6.col-sm-9.col-xs-12
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Personal Profile
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Name:
+                                        td
+                                          input.form-control(type='text', placeholder='Name of the Student', name='name', required='')
+                                      tr 
+                                        th Roll No
+                                        td 
+                                          input.form-control(type='text', placeholder='Enter RollNo', name='rollno', required='')
+                                      tr
+                                        th Email:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Email', name='email', required='')
+                                      tr
+                                        th Department:
+                                        td
+                                          select.form-control(name='dept',required)
+                                            option(value='') --select--
+                                            option(value='CSE') CSE
+                                            option(value='AGRI') AGRI
+                                            option(value='MIN') MIN
+                                            option(value='CIVIL') CIVIL
+                                            option(value='ECE') ECE
+                                            option(value='ECE-I') ECE-I
+                                            option(value='ECE-II') ECE-II
+                                            option(value='EEE') EEE
+                                            option(value='H&BS') H&BS
+                                            option(value='H&BS-I') H&BS-I
+                                            option(value='H&BS-II') H&BS-II
+                                            option(value='IT') IT
+                                            option(value='IT&MCA') IT&MCA
+                                            option(value='MECH') MECH
+                                            option(value='MECH-I') MECH-I
+                                            option(value='MECH-II') MECH-II
+                                            option(value='DCIV') DCIV
+                                            option(value='DCME') DCME
+                                            option(value='DECE') DECE
+                                            option(value='DEEE') DEEE
+                                            option(value='DPET') DPET
+                                          p#sp4
+                                      
+                                      tr
+                                        th College:
+                                        td
+                                          select.form-control(name='college', required)
+                                            option(value='') --select--
+                                            option(value='AEC') Aditya Engineering College
+                                            option(value='ACET') Aditya College of Engineering and Technology
+                                            option(value='ACE') Aditya College of Engineering
+                                          p#sp5
+                                      tr
+                                        th Mobile:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Mobile No', name='mobile', required='')
+                                      tr
+                                        th Year:
+                                        td
+                                          input.form-control(type='text', placeholder='Ex:2011-2015', name='year', required='')
+                              .row
+                                br
+                                br
+                                .col-md-8.text-right
+                                  input.btn.btn-primary(type='submit', value='Submit', name='', style='margin-right:50px;')
+                                  input.btn.btn-warning(type='reset', value='Clear', name='')
+                        #menu1.tab-pane.fade
+                          br 
+                          br
+                          .container(style='background-color: white;width: 100%;height:100%;')
+                            center
+                              form(enctype='multipart/form-data', action='/resume', method='post')
+                                br
+                                br
+                                input(type='file', name='file')
+                                button.btn.btn-info(type='submit', value='Upload', name='submit') upload
+                              br
+                              br
+                #notices.tab-pane.fade.align
+                  form(method='post', action='/addnews')
+                    .container
+                      .message-box
+                        .message-icon
+                          img(src='https://s3.amazonaws.com/flashypublic/mail-delivery-success.png', width='80', height='81', alt='success')
+                        .message-content
+                          h2.success Latest News!
+                          p
+                            .col-md-8.table-responsive
+                              br
+                              br
+                              table.colleges.table.table-hover
+                                tbody
+                                  tr
+                                    th Description:
+                                    td
+                                      textarea.form-control(placeholder='description', value='', name='description', required='')  
+                                  tr
+                                    th Link:
+                                    td
+                                      input.form-control(type='text', placeholder='enter embeded link', name='link', required='')
+                                  tr
+                                    td
+                                      button.btn.btn-info.form-control(type='submit') submit
+
+
+                          br
+                          br
+                          center
+                      .clear
+                    .message-shadow
+                #all.tab-pane.fade.align
+                  br
+                  br
+                  .row
+                    .col-lg-12
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th Student Name
+                                  th Roll Number
+                                  th Email
+                                  th Mobile No
+                                  th Branch
+                                  th Year
+                                  th College
+                                  th Percentage
+                                  th Semister
+                                  th Status
+                              tbody
+                                if user
+                                  each member in user
+                                    tr.odd.gradeA
+                                      td #{member.name}
+                                      td.std #{member.rollno}
+                                      td #{member.email}
+                                      td #{member.mobile}
+                                      td #{member.dept}
+                                      td #{member.year}
+                                      td #{member.college}
+                                      td #{member.percentage}
+                                      td #{member.Semister} 
+                                      td 
+                                        button(value=member.rollno).select.btn.btn-info Select
+                    br
+                #allenrolled.tab-pane.fade.align
+                  br
+                  br
+                  .row
+                    .col-lg-12
+                      // Advanced Tables
+                      .panel.panel-default
+                        .panel-body
+                          .table-responsive
+                            table#dataTables-example1.table.table-striped.table-bordered.table-hover
+                              thead
+                                tr
+                                  th Student Name
+                                  th Roll Number
+                                  th Email
+                                  th Mobile No
+                                  th Branch
+                                  th Year
+                                  th College
+                                  th Percentage
+                                  th Semister
+                                  th Status
+                              tbody
+                                if user1
+                                  each member in user1
+                                    tr.odd.gradeA
+                                      td #{member.name}
+                                      td.app #{member.rollno}
+                                      td #{member.email}
+                                      td #{member.mobile}
+                                      td #{member.dept}
+                                      td #{member.year}
+                                      td #{member.college}
+                                      td #{member.percentage}
+                                      td #{member.Semister} 
+                                      td 
+                                        button(value=member.rollno).select.btn.btn-info Select
+                    br
+                #college.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .col-md-12(style='border-bottom:1px solid lightgrey')
+                      nav.navbar
+                        .container-fluid
+                          .navbar-header
+                            a.navbar-brand(href='#')
+                              h4 Colleges
+                          ul.nav.navbar-nav.pull-right
+                            li.dropdown.pull-left
+                              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                i.fa.fa-envelope-o(style='font-size: 25px;', aria-hidden='true')
+                              ul.dropdown-menu
+                                li
+                                  a(href='#') AEC
+                                li
+                                  a(href='#') ACET
+                                li
+                                  a(href='#') ACOE
+                            li
+                              a(href='#')
+                                i.fa.fa-upload(style='font-size: 25px;', aria-hidden='true')
+                    .col-md-6.col-md-offset-3.text-center.img-responsive
+                      br
+                      br
+                      img.img.img-responsive(style='border:1px solid lightgrey; margin: auto;', src='mainaditya.jpg', height='350px', width='350px')
+                      br
+                      br
+                      p
+                        | ADITYA ENGINEERING COLLEGE
+                        br
+                        |  234 students enrolled
+                        br
+                        |  Total ---- students invited
+                    .clearfix
+                    br
+                    br
+                    br
+                    br
+                    .col-md-6.col-md-offset-3.text-center.img-responsive
+                      img.img.img-responsive(style='border:1px solid lightgrey; margin: auto;', src='saiaditya.jpg', height='350px', width='350px')
+                      br
+                      br
+                      p
+                        | SRI ADITYA ENGINEERING COLLEGE & TECHNOLOGY
+                        br
+                        |  234 students enrolled
+                        br
+                        |  Total ---- students invited
+                    .clearfix
+                    br
+                    br
+                    br
+                    br
+                    .col-md-6.col-md-offset-3.text-center.img-responsive
+                      img.img.img-responsive(style='border:1px solid lightgrey; margin: auto;', src='sriaditya.jpg', height='350px', width='350px')
+                      br
+                      br
+                      p
+                        | SRI SAI ADITYA COLLEGE OF ENGINEERING
+                        br
+                        |  234 students enrolled
+                        br
+                        |  Total ---- students invited
+                    .clearfix
+                #calendar.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                  .content
+                    .calendar-container
+                      .calendar
+                        .year-header
+                          span#prev.left-button  〈 
+                          span#label.year
+                          span#next.right-button  〉 
+                        table.months-table
+                          tbody
+                            tr.months-row
+                              td.month Jan
+                              td.month Feb
+                              td.month Mar
+                              td.month Apr
+                              td.month May
+                              td.month Jun
+                              td.month Jul
+                              td.month Aug
+                              td.month Sep
+                              td.month Oct
+                              td.month Nov
+                              td.month Dec
+                        table.days-table
+                          td.day Sun
+                          td.day Mon
+                          td.day Tue
+                          td.day Wed
+                          td.day Thu
+                          td.day Fri
+                          td.day Sat
+                        .frame
+                          table.dates-table
+                            tbody.tbody
+                        button#add-button(style='display:none').button Add Event
+                    .events-container
+                    #dialog.dialog
+                      h2.dialog-header  Add New Event 
+                      form#form.form
+                        .form-container(align='center')
+                          label#valueFromMyButton.form-label(for='name') Event name
+                          input#name.input(type='text', maxlength='36')
+                          label#valueFromMyButton.form-label(for='count') Description
+                          input#count.input(type='text', name='Description')
+                          input#cancel-button.button(type='button', value='Cancel')
+                          input#ok-button.button(type='button', value='OK')
+                #placements.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .row
+                    br
+                    .col-md-10.col-md-offset-1
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#en') Eligible Students
+                        li
+                          a(data-toggle='tab', href='#ot') Aptitude Test
+                        li
+                          a(data-toggle='tab', href='#gd') Group Discussion
+                        li
+                          a(data-toggle='tab', href='#ti') Technical Interview
+                        li
+                          a(data-toggle='tab', href='#fi') HR Interview
+                        li
+                          a(data-toggle='tab', href='#pl') Placed Students
+                      .tab-content
+                        #en.tab-pane.fade.in.active
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example2.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Department
+                                          th Percentage
+                                          th Email
+                                          th Mobile No 
+                                          th status                                
+                                      tbody
+                                        if en
+                                          each member in en
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.rollno, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td.ele #{member.rollno}
+                                              td #{member.dept}
+                                              td #{member.percentage}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td 
+                                                button(value=member.rollno).promote.btn.btn-info Promote
+                        #ot.tab-pane.fade.align
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example3.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Department
+                                          th Percentage
+                                          th Aptitude Test
+                                          th Email
+                                          th Mobile No 
+                                          th status                            
+                                      tbody
+                                        if ot
+                                          -var i = 0;
+                                          each member in ot
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.rollno, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.dept}
+                                              td #{member.percentage}
+                                              td 
+                                                input.form-control("text", name="online", id='otmarks'+i)
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td 
+                                                button(value=member.rollno).promote1.btn.btn-info Promote
+                                            -i++
+                        #gd.tab-pane.fade.align
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example4.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Percentage
+                                          th Aptitude Test
+                                          th Group discussion
+                                          th Department
+                                          th Email
+                                          th Mobile No   
+                                          th status                                  
+                                      tbody
+                                        if gd
+                                          -var i = 0;
+                                          each member in gd
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.company_name, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.percentage}
+                                              td #{member.online}
+                                              td 
+                                                input.form-control("text", name="group", id='gdmarks'+i)
+                                              td #{member.dept}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td 
+                                                button(value=member.rollno).promote2.btn.btn-info Promote
+                                          -i++
+                        #ti.tab-pane.fade.align
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example5.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Percentage
+                                          th Aptitude Test
+                                          th Group discussion
+                                          th Technical Interview
+                                          th Department
+                                          th Email
+                                          th Mobile No   
+                                          th status                                 
+                                      tbody
+                                        if ti
+                                          -var i = 0;
+                                          each member in ti
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.company_name, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.percentage}
+                                              td #{member.online}
+                                              td #{member.group}
+                                              td 
+                                                input.form-control("text", name="technical", id='timarks'+i)
+                                              td #{member.dept}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td 
+                                                button(value=member.rollno).promote3.btn.btn-info Promote
+                                          -i++
+                        #fi.tab-pane.fade.align
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example6.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Percentage
+                                          th Aptitude Test
+                                          th Group discussion
+                                          th Technical Interview
+                                          th HR Interview
+                                          th Department
+                                          th Email
+                                          th Mobile No   
+                                          th status                              
+                                      tbody
+                                        if fi
+                                          -var i = 0;
+                                          each member in fi
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.company_name, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.percentage}
+                                              td #{member.online}
+                                              td #{member.group}
+                                              td #{member.technical}
+                                              td 
+                                                input.form-control("text", name="final", id='fimarks'+i)
+                                              td #{member.dept}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td 
+                                                button(value=member.rollno).promote4.btn.btn-info Select
+                                          -i++
+                        #pl.tab-pane.fade.align
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example7.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Profile Pic
+                                          th Name
+                                          th Roll No
+                                          th Percentage
+                                          th Aptitude Test
+                                          th Group discussion
+                                          th Technical Interview
+                                          th HR Interview
+                                          th Department
+                                          th Email
+                                          th Mobile No                                     
+                                      tbody
+                                        if pl
+                                          -var i = 0;
+                                          each member in pl
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                //a(href='/companydetails/'+member.company_name, target='_blank')
+                                                img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td.pla #{member.rollno}
+                                              td #{member.percentage}
+                                              td #{member.online}
+                                              td #{member.group}
+                                              td #{member.technical}
+                                              td #{member.final}
+                                              td #{member.dept}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                br
+                br
+                br
+                #profile.tab-pane.fade.align
+                  .col-md-6.col-md-offset-3
+                      form
+                        br
+                        br
+                        .input-group
+                          span#basic-addon1.input-group-addon
+                            i.fa.fa-search(style='font-size: 20px;', aria-hidden='true')
+                          input#No.form-control(type='text', placeholder='Start typing roll number')
+                      br
+                      br
+                      br
+                      br
+                  .find
+                    .container(style='width: 100%;height:100%')
+                      div
+                        .col-md-10.col-md-offset-1(style='border: 1px solid lightgrey;')
+                          .row
+                            .col-md-6.col-sm-12.col-xs-12(style='height: 150px; padding: 0px;')
+                              .col-md-6.col-sm-6.col-xs-6(style='padding:0px;')
+                                img(src="", width='115', id="studentImg")
+                              .col-md-6.col-sm-6.col-xs-6.text-left
+                                h3#name1
+                                h4#college1
+                                h5#dept
+                            .col-md-2.col-sm-6.col-xs-6.text-center(style='height: 150px;')
+                              .col-md-12
+                                br
+                                h3#semister
+                                h4 Semister
+                            .col-md-2.col-sm-6.col-xs-6.text-center(style='height: 150px;')
+                              .col-md-12
+                                br
+                                h3#year
+                                |  year
+                            .col-md-2.col-sm-6.col-xs-6.text-center(style='height: 150px;')
+                              .col-md-6
+                                br
+                                h3#percentage
+                                h4 Percentage
+                        .clearfix
+                        br
+                        br
+                        br
+                        .col-md-10.col-md-offset-1
+                          ul.nav.nav-tabs
+                            li.active
+                              a(data-toggle='tab', href='#general') ABOUT
+                            li
+                              a(data-toggle='tab', href='#academic') ACADEMIC DETAILS
+                            li
+                              a(data-toggle='tab', href='#prof') PROFESSIONAL DATA
+                            li
+                              a(data-toggle='tab', href='#projects') PROJECTS
+                            li
+                              a(data-toggle='tab', href='#menu2') RESUMES
+                            li
+                              a(data-toggle='tab', href='#social1') SOCIAL MEDIA
+                          .tab-content
+                            // ******************************* GENERAL TAB START *******************************
+                            #general.tab-pane.fade.in.active
+                              .row
+                                br
+                                br
+
+                                .col-md-2.col-sm-3
+                                  ul.nav.nav-tabs.tabs-left(role='tablist')
+                                    li.active(role='presentation')
+                                      a(href='#overview', aria-controls='logo', role='tab', data-toggle='tab') Overview
+                                    li(role='presentation')
+                                      a(href='#address', aria-controls='profile', role='tab', data-toggle='tab') Address
+                                    li(role='presentation')
+                                      a(href='#family', aria-controls='profile', role='tab', data-toggle='tab') Family
+                                .col-md-10.col-sm-9
+                                  .tab-content
+                                    #overview.tab-pane.active(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Overview
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr
+                                              td.text-left Contact No
+                                              td#mobile.text-left
+                                            tr
+                                              td.text-left Email
+                                              td#email.text-left
+                                            tr
+                                              td.text-left D.O.B
+                                              td#dob.text-left
+                                            tr
+                                              td.text-left Gender
+                                              td#gender.text-left
+                                            tr
+                                              td.text-left Category
+                                              td#caste.text-left
+                                    #address.tab-pane(role='tabpanel')
+                                      .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                        .col-md-6.text-left
+                                          h4 Address
+                                      table.colleges.table.table-border
+                                        tbody
+                                          tr
+                                            td.text-left 
+                                              b 
+                                                u Permenant Address
+                                              h5#PermanentDoorno
+                                              h5#PermanentStreet
+                                              h5#PermanentCity
+                                              h5#PermanentState
+                                              h5#PermanentCountry
+                                              h5#Permanentzipcode
+                                          tr
+                                            td.text-left 
+                                              b 
+                                                u Current Address
+                                              h5#TemporaryDoorno
+                                              h5#TemporaryStreet
+                                              h5#TemporaryCity
+                                              h5#TemporaryState
+                                              h5#TemporaryCountry
+                                              h5#Temporaryzipcode
+                                    #family.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Family
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr
+                                              td.text-left Father Name
+                                              td#fn.text-left
+                                            tr
+                                              td.text-left Father D.O.B
+                                              td#fd.text-left
+                                            tr
+                                              td.text-left Mother Name
+                                              td#mn.text-left
+                                            tr
+                                              td.text-left Mother D.O.B
+                                              td#md.text-left
+                                            tr
+                                              td.text-left Sibling1 Name
+                                              td#s1.text-left
+                                            tr
+                                              td.text-left Sibling1 D.O.B
+                                              td#s1d.text-left
+                                            tr 
+                                              td.text-left Sibling2 Name
+                                              td#s2.text-left
+                                            tr
+                                              td.text-left Sibling2 D.O.B
+                                              td#s2d.text-left
+                                            tr
+                                              td.text-left Sibling3 Name
+                                              td#s3.text-left
+                                            tr
+                                              td.text-left Sibling3 D.O.B
+                                              td#s3d.text-left
+                              br
+                              br
+                              br
+                              br
+                              br
+                            #academic.tab-pane.fade
+                              .row
+                                br
+                                br
+
+                                .col-md-2.col-sm-3
+                                  ul.nav.nav-tabs.tabs-left(role='tablist')
+                                    li.active(role='presentation')
+                                      a(href='#ssc', aria-controls='logo', role='tab', data-toggle='tab') SSC
+                                    li(role='presentation')
+                                      a(href='#inter', aria-controls='profile', role='tab', data-toggle='tab') INTER
+                                    li(role='presentation')
+                                      a(href='#diploma', aria-controls='messages', role='tab', data-toggle='tab') DIPLOMA
+                                    li(role='presentation')
+                                      a(href='#graduation', aria-controls='messages', role='tab', data-toggle='tab') GRADUATION
+                                .col-md-10.col-sm-9
+                                  .tab-content
+                                    #ssc.tab-pane.active(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 SSC
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr
+                                              td.text-left Institution
+                                              td#sscins
+                                            tr
+                                              td.text-left Year
+                                              td#sscyear
+                                            tr
+                                              td.text-left Percentage
+                                              td#sscper
+                                    #inter.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 INTER
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr
+                                              td.text-left Institution
+                                              td#interins
+                                            tr
+                                              td.text-left Year
+                                              td#interyear
+                                            tr
+                                              td.text-left Percentage
+                                              td#interper
+                                    #diploma.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 DIPLOMA
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr
+                                              td.text-left Institution
+                                              td#diplomains 
+                                            tr
+                                              td.text-left Year
+                                              td#diplomayear
+                                            tr
+                                              td.text-left Percentage
+                                              td#diplomaper
+                                    #graduation.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 B.TECH
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Course
+                                              td#UGcourse
+                                            tr
+                                              td.text-left Institution
+                                              td#UGins
+                                            tr
+                                              td.text-left Year
+                                              td#UGyear
+                                            tr
+                                              td.text-left Percentage
+                                              td#UGper
+                              br
+                              br
+                              br
+                              br
+                              br
+                            #prof.tab-pane.fade
+                              .row
+                                br
+                                br
+
+                                .col-md-2.col-sm-3
+                                  ul.nav.nav-tabs.tabs-left(role='tablist')
+                                    li.active(role='presentation')
+                                      a(href='#certify', aria-controls='logo', role='tab', data-toggle='tab') Certifications
+                                    li(role='presentation')
+                                      a(href='#h', aria-controls='profile', role='tab', data-toggle='tab') Hackthons
+                                    li(role='presentation')
+                                      a(href='#c', aria-controls='profile', role='tab', data-toggle='tab') Competitions
+                                    li(role='presentation')
+                                      a(href='#w', aria-controls='profile', role='tab', data-toggle='tab') Workshops
+                                    li(role='presentation')
+                                      a(href='#cc', aria-controls='profile', role='tab', data-toggle='tab') Completion Certifications
+                                    li(role='presentation')
+                                      a(href='#tp', aria-controls='profile', role='tab', data-toggle='tab') T-hub Participations
+                                .col-md-10.col-sm-9
+                                  .tab-content
+                                    #certify.tab-pane.active(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Certifications
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Name
+                                              td#cname
+                                            tr
+                                              td.text-left Organisation
+                                              td#corg
+                                            tr
+                                              td.text-left Month
+                                              td#cmon
+                                            tr
+                                              td.text-left Year
+                                              td#cyea
+                                    #h.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Hackthons
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Name
+                                              td#hname
+                                            tr
+                                              td.text-left Organisation
+                                              td#horg
+                                            tr
+                                              td.text-left Month
+                                              td#hmon
+                                            tr
+                                              td.text-left Year
+                                              td#hyea
+                                    #c.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Completion
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Name
+                                              td#coname
+                                            tr
+                                              td.text-left Organisation
+                                              td#coorg
+                                            tr
+                                              td.text-left Month
+                                              td#comon
+                                            tr
+                                              td.text-left Year
+                                              td#coyea
+                                    #w.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Workshops
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Name
+                                              td#wname
+                                            tr
+                                              td.text-left Organisation
+                                              td#worg
+                                            tr
+                                              td.text-left Month
+                                              td#wmon
+                                            tr
+                                              td.text-left Year
+                                              td#wyea
+                                    #cc.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 Completion Certifications
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Name
+                                              td#ccname
+                                            tr
+                                              td.text-left Organisation
+                                              td#ccorg
+                                            tr
+                                              td.text-left Month
+                                              td#ccmon
+                                            tr
+                                              td.text-left Year
+                                              td#ccyea
+                                    #tp.tab-pane(role='tabpanel')
+                                      .row
+                                        br
+                                        .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                          .col-md-6.text-left
+                                            h4 T-hub Participations
+                                        table.colleges.table.table-border
+                                          tbody
+                                            tr 
+                                              td.text-left Programme
+                                              td#tpro
+                                            tr
+                                              td.text-left Duration
+                                              td#tdur
+                                            tr
+                                              td.text-left Month
+                                              td#tmon
+                                            tr
+                                              td.text-left Year
+                                              td#tyea
+                            #projects.tab-pane.active(role='tabpanel') Projects
+                              .row
+                                br
+                                .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                  .col-md-6.text-left
+                                    h4 Projects
+                                table.colleges.table.table-border
+                                  tbody
+                                    tr 
+                                      td.text-left Title
+                                      td#ptitle
+                                    tr
+                                      td.text-left Technology
+                                      td#ptech
+                                    tr
+                                      td.text-left Description
+                                      td#pdes
+                                    tr
+                                      td.text-left From
+                                      td#pfro
+                                    tr
+                                      td.text-left To
+                                      td#pto      
+                            #menu2.tab-pane.fade
+                              table.colleges.table.table-border
+                                tbody
+                                  tr 
+                                    td.text-left Resume
+                                    td
+                                      a.btn.btn-info(href="", id="studentresume") Download
+                            #social1.tab-pane(role='tabpanel')
+                              .row
+                                br
+                                .col-md-12(style='border-bottom:1px solid lightgrey;')
+                                  .col-md-6.text-left
+                                    h4 Projects
+                                table.colleges.table.table-border
+                                  tbody
+                                    tr 
+                                      td.text-left Facebook
+                                      td#facebook
+                                    tr
+                                      td.text-left Twitter
+                                      td#twitter
+                                    tr
+                                      td.text-left Whatsapp
+                                      td#whatsapp
+                                    tr
+                                      td.text-left Google+
+                                      td#google
+                                    tr
+                                      td.text-left Instagram
+                                      td#instagram
+                                    tr 
+                                      td.text-left LinkedIn
+                                      td#linkedin
+                                    tr
+                                      td.text-left Pinterest
+                                      td#pinterest
+                                    tr
+                                      td.text-left YouTube
+                                      td#youtube
+                                    tr
+                                      td.text-left Blog
+                                      td#blog
+                #companies.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .row
+                    br
+                    .col-md-10.col-md-offset-1
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#active') Actived
+                        li
+                          a(data-toggle='tab', href='#process') In Process
+                        li
+                          a(data-toggle='tab', href='#completed') Completed
+                      .tab-content
+                        #active.tab-pane.fade.in.active
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example8.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email                                
+                                      tbody
+                                        if active
+                                          each member in active
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td #{member.company_name}
+                                              td #{member.location}
+                                              td #{member.email}
+                            br
+                        #process.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example9.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email                             
+                                      tbody
+                                        if processing
+                                          each member in processing
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td #{member.company_name}
+                                              td #{member.location}
+                                              td #{member.email}
+                            br
+                        #completed.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example10.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email                            
+                                      tbody
+                                        if completed
+                                          each member in completed
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td #{member.company_name}
+                                              td #{member.location}
+                                              td #{member.email}
+                #enrolled.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .row
+                    br
+                    .col-md-10.col-md-offset-1
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#active1') Actived
+                        li
+                          a(data-toggle='tab', href='#process1') In Process
+                        li
+                          a(data-toggle='tab', href='#completed1') Completed
+                      .tab-content
+                        #active1.tab-pane.fade.in.active
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example11.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email   
+                                          th Status                             
+                                      tbody
+                                        if active
+                                          each member in active
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td 
+                                                input.form-control(type='text', value=member.company_name, readonly, style='border:none; outline:none')
+                                              td #{member.location}
+                                              td #{member.email}
+                                              td 
+                                                a.btn.btn-info(href='/appliedstudents/'+member.company_name, target='_blank') Applicants
+                            br
+                        #process1.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example12.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email    
+                                          th Status                         
+                                      tbody
+                                        if processing
+                                          each member in processing
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td 
+                                                input.form-control(type='text', value=member.company_name, readonly, style='border:none; outline:none')
+                                              td #{member.location}
+                                              td #{member.email}
+                                              td 
+                                                a.btn.btn-info(href='/appliedstudents/'+member.company_name, target='_blank') Applicants
+                            br
+                        #completed1.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example13.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Logo
+                                          th Company Name
+                                          th Location
+                                          th Email    
+                                          th Status                        
+                                      tbody
+                                        if completed
+                                          each member in completed
+                                            tr.odd.gradeA
+                                              td(style="text-align:center")
+                                                a(href='/companydetails/'+member.company_name, target='_blank')
+                                                  img.img-circle(src="companies/" +member.company_name+ ".png")
+                                              td 
+                                                input.form-control(type='text', value=member.company_name, readonly, style='border:none; outline:none')
+                                              td #{member.location}
+                                              td #{member.email}
+                                              td 
+                                                a.btn.btn-info(href='/appliedstudents/'+member.company_name, target='_blank') Applicants
+                #selected.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .row
+                    br
+                    .col-md-10.col-md-offset-1
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#aec2') AEC
+                        li
+                          a(data-toggle='tab', href='#acet2') ACET
+                        li
+                          a(data-toggle='tab', href='#ace2') ACE
+                      .tab-content
+                        #aec2.tab-pane.fade.in.active
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example14.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Image
+                                          th Student Name
+                                          th Roll Number
+                                          th Email
+                                          th Mobile No
+                                          th Branch
+                                          th College
+                                          th Percentage
+                                      tbody
+                                        if paec
+                                          each member in paec
+                                            tr.odd.gradeA
+                                              td 
+                                                a(href='/studentdetails/'+member.rollno, target='_blank')
+                                                  img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td #{member.dept}
+                                              td #{member.college}
+                                              td #{member.percentage}
+                            br
+                        #acet2.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example15.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Image
+                                          th Student Name
+                                          th Roll Number
+                                          th Email
+                                          th Mobile No
+                                          th Branch
+                                          th Year
+                                          th College
+                                          th Percentage
+                                          th Semister
+                                      tbody
+                                        if pacet
+                                          each member in pacet
+                                            tr.odd.gradeA
+                                              td 
+                                                a(href='/studentdetails/'+member.rollno, target='_blank')
+                                                  img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td #{member.dept}
+                                              td #{member.year}
+                                              td #{member.college}
+                                              td #{member.percentage}
+                                              td #{member.semister} 
+                            br
+                        #ace2.tab-pane.fade
+                          br
+                          br
+                          .row
+                            .col-lg-12
+                              // Advanced Tables
+                              .panel.panel-default
+                                .panel-body
+                                  .table-responsive
+                                    table#dataTables-example16.table.table-striped.table-bordered.table-hover
+                                      thead
+                                        tr
+                                          th Image
+                                          th Student Name
+                                          th Roll Number
+                                          th Email
+                                          th Mobile No
+                                          th Branch
+                                          th Year
+                                          th College
+                                          th Percentage
+                                          th Semister
+                                      tbody
+                                        if pace
+                                          each member in pace
+                                            tr.odd.gradeA
+                                              td 
+                                                a(href='/studentdetails/'+member.rollno, target='_blank')
+                                                  img.img-circle(src="profilepics/" +member.rollno+ ".jpg", width='100', height='100')
+                                              td #{member.name}
+                                              td #{member.rollno}
+                                              td #{member.email}
+                                              td #{member.mobile}
+                                              td #{member.dept}
+                                              td #{member.year}
+                                              td #{member.college}
+                                              td #{member.percentage}
+                                              td #{member.Semister}  
+                #companyadmin.tab-pane.fade.align
+                  .container(style='width: 100%;height:100%;')
+                    .row
+                    br
+                    .col-md-10.col-md-offset-1
+                      ul.nav.nav-tabs
+                        li.active
+                          a(data-toggle='tab', href='#details') Company Details
+                        li
+                          a(data-toggle='tab', href='#collob') Collobarators
+                      .tab-content
+                        #details.tab-pane.fade.in.active
+                          .container(style='width: 100%;height:100%;')
+                          .col-md-12
+                            h2(style='padding-bottom:25px; border-bottom:1px solid lightgrey;') Add Logo
+                          form(enctype='multipart/form-data', method='post', action='/companydetails')
+                            .col-md-10.col-md-offset-1
+                              .row
+                                .col-md-2.col-sm-3.col-xs-6.col-md-offset-0.col-xs-offset-3.text-center
+                                .col-md-6.col-sm-9.col-xs-12
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Upload Logo
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Logo:
+                                        td
+                                          input.form-control(type='file', name='image')
+                                      tr
+                                        th Company:
+                                        td
+                                          input.form-control(type='text', placeholder='Name of the Company', value='', name='company_name', required='')
+                                      tr
+                                        th Email:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Email', value='', name='email', required='')
+                                      tr
+                                        th From:
+                                        td
+                                          input.form-control(type='date', value='', name='from', required='')
+                                      tr
+                                        th To:
+                                        td
+                                          input.form-control(type='date', value='', name='to', required='')
+                              .row
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Job Profile Details
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Location:
+                                        td
+                                          input.form-control(type='text', placeholder='Location', value='', name='location', required='')
+                                      tr
+                                        th Position type:
+                                        td
+                                          input.form-control(type='text', placeholder='Position type', value='', name='position', required='')
+                                      tr
+                                        th Sector:
+                                        td
+                                          input.form-control(type='text', placeholder='Sector', value='', name='sector')
+                                      tr
+                                        th Pay: 
+                                        td
+                                          input.form-control(type='text', placeholder='Pay', value='', name='ctc', required='')
+                                      tr
+                                        th Bond: 
+                                        td
+                                          input.form-control(type='text', placeholder='In Months/ In Years', value='', name='bond', required='')
+                                      tr
+                                        th Job Description:
+                                        td
+                                          textarea.form-control(placeholder='Job description', value='', name='description', required='')  
+                              .row
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Additional Information
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Visit Date:
+                                        td
+                                          input.form-control(type='date', placeholder='Visit date', value='', name='visit_date', required='')
+                                      tr
+                                        th Dress Code:
+                                        td
+                                          input.form-control(type='text', placeholder='Dress Code', value='', name='dress_code', required='')
+                              .row
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Applicable courses
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Diploma
+                                        td
+                                          input.form-control(type='text', placeholder='Ex:- CSE,EEE, etc', value='', name='diploma_courses', required='', disabled)
+                                      tr
+                                        th B.Tech
+                                        td
+                                          input.form-control(type='text', placeholder='Ex:- CSE,EEE, etc', value='', name='btech_courses', required='')
+                                      tr
+                                        th M.Tech
+                                        td
+                                          input.form-control(type='text', placeholder='Ex:- CSE,EEE, etc', value='', name='mtech_courses', required='', disabled)
+                                      tr
+                                        th MBA
+                                        td
+                                          input.form-control(type='text', placeholder='MBA', value='', name='mba_courses', required='', disabled)
+                              .row
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Eligibility Criteria
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Diploma
+                                        td
+                                          textarea.form-control(placeholder='Students must have 60% in class X', value='', name='eligible_diploma', required, disabled)
+                                      tr
+                                        th B.Tech
+                                        td
+                                          textarea.form-control(placeholder='Students must have 60% in class X', value='', name='eligible_btech', required)
+                                      tr
+                                        th M.Tech
+                                        td
+                                          textarea.form-control(placeholder='Students must have 60% in class X', value='', name='eligible_mtech', required, disabled)
+                                      tr
+                                        th MBA
+                                        td
+                                          textarea.form-control(placeholder='Students must have 60% in class X', value='', name='eligible_mba', required, disabled)
+                              .row
+                                br
+                                br
+                                .col-md-8
+                                  h3 Attendance Criteria
+                                  textarea.form-control(placeholder='Attendance Criteria', value='', name='attendance', required)
+                              .row
+                                br
+                                br
+                                .col-md-8
+                                  h3 Gender Criteria
+                                  input.form-control(type="text", value='', name="gender", placeholder="Gender Criteria", required)
+                              .row
+                                br
+                                br
+                                .col-md-8
+                                  h3 Additional Configurations
+                                  textarea.form-control(name='add_con')
+                              .row
+                                br
+                                br
+                                .col-md-8
+                                  h3 Interview Rounds
+                                  input#all_selectons(name='all_selectons', type='checkbox', onclick='select_all()')
+                                  label(for='all_selectons')
+                                    | Select All
+                                  .checkbox
+                                    br
+                                    label(style='font-size: 1.0em')
+                                      input#AptitudeTest(type='checkbox', name='AptitudeTest', value='AptitudeTest', onclick='selection_single()')
+                                      span.cr
+                                      |                 Aptitude Test
+                                    br
+                                    label(style='font-size: 1.0em')
+                                      input#GroupDiscussion(type='checkbox', name='GroupDiscussion', value='GroupDiscussion', onclick='selection_single()')
+                                      span.cr
+                                      |                 Group Discussion
+                                    br
+                                    label(style='font-size: 1.0em')
+                                      input#TechnicalInterview(type='checkbox', name='TechnicalInterview', value='TechnicalInterview', onclick='selection_single()')
+                                      span.cr
+                                      |                 Technical Interview
+                                    br
+                                    label(style='font-size: 1.0em')
+                                      input#HrInterview(type='checkbox', name='HrInterview', value='HrInterview', onclick='selection_single()')
+                                      span.cr
+                                      |                 HR Interview
+                              .row
+                                br
+                                br
+                                .col-md-8.text-right
+                                  input#getdata.btn.btn-primary(type='submit', value='Submit', name='', style='margin-right:50px;')
+                                  input.btn.btn-warning(type='reset', value='Clear', name='')
+                        #collob.tab-pane.fade.align
+                          .container(style='width: 100%;height:100%;')
+                          .col-md-12
+                            h2(style='padding-bottom:25px; border-bottom:1px solid lightgrey;') Add Collobarators
+                          form.form-group(enctype='multipart/form-data', method='post', action='/colloborators' name='add_colloborators')
+                            .col-md-10.col-md-offset-1
+                              .row
+                                br
+                                br
+                                .col-md-12
+                                  h4(style='color: black; border-bottom:1px solid lightgrey;') Collobarators
+                                .col-md-8.table-responsive
+                                  br
+                                  br
+                                  table.colleges.table.table-hover
+                                    tbody
+                                      tr
+                                        th Image:
+                                        td
+                                          input.form-control(type='file', name='image')
+                                      tr
+                                        th Name:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Name', name='name', required='')
+                                      tr
+                                        th Designation:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Designation', name='designation', required='')
+                                      tr
+                                        th Mobile:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Mobile Number', name='mobile')
+                                      tr
+                                        th Email:
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Email', name='email')
+                                      tr
+                                        th Company Name
+                                        td
+                                          input.form-control(type='text', placeholder='Enter Company Name', name='company_name', required='') 
+                              .row
+                                br
+                                br
+                                .col-md-8.text-right
+                                  input.btn.btn-primary(type='submit', value='Submit', name='', style='margin-right:50px;')
+                                  input.btn.btn-warning(type='reset', value='Clear', name='')
+      //
+        **********************************************************************************************************************************************************
+        MAIN CONTENT
+        ***********************************************************************************************************************************************************
+      // main content start
+      // /MAIN CONTENT
+      // main content end
+      //
+    // js placed at the end of the document so the pages load faster
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery-ui-1.9.2.custom.min.js')
+    script(src='assets/js/jquery.ui.touch-punch.min.js')
+    script.include(type='text/javascript', src='assets/js/jquery.dcjqaccordion.2.7.js')
+    script(src='assets/js/jquery.scrollTo.min.js')
+    script(src='assets/js/jquery.nicescroll.js', type='text/javascript')
+    // common script for all pages
+    script(src='assets/js/calendar.js')
+    script(src='assets/js/common-scripts.js')
+    script(src='assets/js/count.js')
+    //External js
+    script(src='https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js')
+    script(src='https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.flash.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js')
+    script(src='//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js')
+    script(src='//cdn.datatables.net/buttons/1.3.1/js/buttons.print.min.js')
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Total Students List'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Total Students List'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Total Students List'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Total Students List'
+            },
+            {
+                extend: 'print',
+                title: 'Total Students List'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example1').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'All Enrolled Students'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'All Enrolled Students'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'All Enrolled Students'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'All Enrolled Students'
+            },
+            {
+                extend: 'print',
+                title: 'All Enrolled Students'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example2').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Eligible Students'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Eligible Students'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Eligible Students'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Eligible Students'
+            },
+            {
+                extend: 'print',
+                title: 'Eligible Students'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example3').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Placements'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'print',
+                title: 'Placements'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example4').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Placements'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'print',
+                title: 'Placements'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example5').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Placements'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'print',
+                title: 'Placements'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example6').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Placements'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Placements'
+            },
+            {
+                extend: 'print',
+                title: 'Placements'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example7').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Placed Students'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Placed Students'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Placed Students'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Placed Students'
+            },
+            {
+                extend: 'print',
+                title: 'Placed Students'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example8').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'print',
+                title: 'Active Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example9').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'print',
+                title: 'In-Process Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example10').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'print',
+                title: 'Completed Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example11').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Active Companies'
+            },
+            {
+                extend: 'print',
+                title: 'Active Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example12').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'In-Process Companies'
+            },
+            {
+                extend: 'print',
+                title: 'In-Process Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example13').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'Completed Companies'
+            },
+            {
+                extend: 'print',
+                title: 'Completed Companies'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example14').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'AEC Placed List'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'AEC Placed List'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'AEC Placed List'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'AEC Placed List'
+            },
+            {
+                extend: 'print',
+                title: 'AEC Placed List'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example15').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'ACET Placed List'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'ACET Placed List'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'ACET Placed List'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'ACET Placed List'
+            },
+            {
+                extend: 'print',
+                title: 'ACET Placed List'
+            }
+        ]
+      });
+      });
+    script.
+      $(document).ready(function () {
+      $('#dataTables-example16').dataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                title: 'ACE Placed List'
+            },
+            {
+                extend: 'csvHtml5',
+                title: 'ACE Placed List'
+            },
+            {
+                extend: 'excelHtml5',
+                title: 'ACE Placed List'
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'ACE Placed List'
+            },
+            {
+                extend: 'print',
+                title: 'ACE Placed List'
+            }
+        ]
+      });
+      });
+    // script for this page
+    script.
+      //custom select box
+      $(function(){
+      $('select.styled').customSelect();
+      });
+    script.
+      $('#No').keyup(function(){
+      var No=$('#No').val();
+      $.post('/profile',{No:No},function(data,textStatus,jqXHR){
+      $("#studentImg").attr("src", "profilepics/"+data[0].rollno+".jpg");
+      $("#studentresume").attr("href", "uploads/"+data[0].rollno+".doc");
+      document.getElementById("ptitle").innerHTML = data[0].Projects[0].Title1;
+      document.getElementById("ptech").innerHTML = data[0].Projects[0].Technology1;
+      document.getElementById("pdes").innerHTML = data[0].Projects[0].Description1;
+      document.getElementById("pfro").innerHTML = data[0].Projects[0].From1;
+      document.getElementById("pto").innerHTML = data[0].Projects[0].To1;
+      document.getElementById("hname").innerHTML = data[0].Hackthon[0].Name;
+      document.getElementById("horg").innerHTML = data[0].Hackthon[0].Org;
+      document.getElementById("hmon").innerHTML = data[0].Hackthon[0].Month;
+      document.getElementById("hyea").innerHTML = data[0].Hackthon[0].Year;
+      document.getElementById("coname").innerHTML = data[0].Competitions[0].Name;
+      document.getElementById("coorg").innerHTML = data[0].Competitions[0].Org;
+      document.getElementById("comon").innerHTML = data[0].Competitions[0].Month;
+      document.getElementById("coyea").innerHTML = data[0].Competitions[0].Year;
+      document.getElementById("ccname").innerHTML = data[0].Completion[0].Name;
+      document.getElementById("ccorg").innerHTML = data[0].Completion[0].Org;
+      document.getElementById("ccmon").innerHTML = data[0].Completion[0].Month;
+      document.getElementById("ccyea").innerHTML = data[0].Completion[0].Year;
+      document.getElementById("wname").innerHTML = data[0].Workshops[0].Name;
+      document.getElementById("worg").innerHTML = data[0].Workshops[0].Org;
+      document.getElementById("wmon").innerHTML = data[0].Workshops[0].Month;
+      document.getElementById("wyea").innerHTML = data[0].Workshops[0].Year;
+      document.getElementById("tpro").innerHTML = data[0].Thub[0].Program;
+      document.getElementById("tdur").innerHTML = data[0].Thub[0].Duration;
+      document.getElementById("tmon").innerHTML = data[0].Thub[0].Month;
+      document.getElementById("tyea").innerHTML = data[0].Thub[0].Year;
+      document.getElementById("cname").innerHTML = data[0].Certifications[0].Name;
+      document.getElementById("corg").innerHTML = data[0].Certifications[0].Org;
+      document.getElementById("cmon").innerHTML = data[0].Certifications[0].Month;
+      document.getElementById("cyea").innerHTML = data[0].Certifications[0].Year;
+      document.getElementById("fn").innerHTML = data[0].fathername;
+      document.getElementById("fd").innerHTML = data[0].fatherdob;
+      document.getElementById("mn").innerHTML = data[0].mothername;
+      document.getElementById("md").innerHTML = data[0].motherdob;
+      document.getElementById("s1").innerHTML = data[0].sibling1name;
+      document.getElementById("s1d").innerHTML = data[0].sibling1dob;
+      document.getElementById("s2").innerHTML = data[0].sibling2name;
+      document.getElementById("s2d").innerHTML = data[0].sibling2dob;
+      document.getElementById("s3").innerHTML = data[0].sibling3name;
+      document.getElementById("s3d").innerHTML = data[0].sibling3dob;
+      document.getElementById("UGcourse").innerHTML = data[0].UG[0].Course;
+      document.getElementById("UGyear").innerHTML = data[0].UG[0].Year;
+      document.getElementById("UGins").innerHTML = data[0].UG[0].Institution;
+      document.getElementById("UGper").innerHTML = data[0].UG[0].Percentage;
+      document.getElementById("facebook").innerHTML = data[0].Facebook;
+      document.getElementById("twitter").innerHTML = data[0].Twitter;
+      document.getElementById("whatsapp").innerHTML = data[0].Whatsapp;
+      document.getElementById("google").innerHTML = data[0].Google;
+      document.getElementById("instagram").innerHTML = data[0].Instagram;
+      document.getElementById("linkedin").innerHTML = data[0].LinkedIn;
+      document.getElementById("pinterest").innerHTML = data[0].Pinterest;
+      document.getElementById("youtube").innerHTML = data[0].YouTube;
+      document.getElementById("blog").innerHTML = data[0].Blog;
+      document.getElementById("email").innerHTML = data[0].email;
+      document.getElementById("percentage").innerHTML = data[0].percentage;
+      document.getElementById("semister").innerHTML = data[0].Semister;
+      document.getElementById("mobile").innerHTML = data[0].mobile;
+      document.getElementById("caste").innerHTML = data[0].caste;
+      document.getElementById("name1").innerHTML = data[0].name;
+      document.getElementById("dept").innerHTML = data[0].dept;
+      document.getElementById("year").innerHTML = data[0].year;
+      document.getElementById("college1").innerHTML = data[0].college;
+      document.getElementById("dob").innerHTML = data[0].dob;
+      document.getElementById("gender").innerHTML = data[0].gender;
+      document.getElementById("PermanentDoorno").innerHTML = data[0].PermanentDoorno;
+      document.getElementById("PermanentStreet").innerHTML = data[0].PermanentStreet;
+      document.getElementById("PermanentCity").innerHTML = data[0].PermanentCity;
+      document.getElementById("PermanentState").innerHTML = data[0].PermanentState;
+      document.getElementById("PermanentCountry").innerHTML = data[0].PermanentCountry;
+      document.getElementById("Permanentzipcode").innerHTML = data[0].Permanentzipcode;
+      document.getElementById("TemporaryDoorno").innerHTML = data[0].TemporaryDoorno;
+      document.getElementById("TemporaryStreet").innerHTML = data[0].TemporaryStreet;
+      document.getElementById("TemporaryCity").innerHTML = data[0].TemporaryCity;
+      document.getElementById("TemporaryState").innerHTML = data[0].TemporaryState;
+      document.getElementById("TemporaryCountry").innerHTML = data[0].TemporaryCountry;
+      document.getElementById("Temporaryzipcode").innerHTML = data[0].Temporaryzipcode;
+      document.getElementById("sscyear").innerHTML = data[0].SSC.YearOfPass;
+      document.getElementById("sscins").innerHTML = data[0].SSC.Institution;
+      document.getElementById("sscper").innerHTML = data[0].SSC.Percentage;
+      document.getElementById("interyear").innerHTML = data[0].Inter.YearOfPass;
+      document.getElementById("interins").innerHTML = data[0].Inter.Institution;
+      document.getElementById("interper").innerHTML = data[0].Inter.Percentage;
+      document.getElementById("diplomayear").innerHTML = data[0].Diploma.YearOfPass;
+      document.getElementById("diplomains").innerHTML = data[0].Diploma.Institution;
+      document.getElementById("diplomaper").innerHTML = data[0].Diploma.Percentage;
+      });
+      $(".find").show();
+      });
+    script.
+      $("#getdata").click(function(){ 
+      var AptitudeTest=$("#AptitudeTest:checked").val() ? "Aptitude Test" : "Aptitude Test"; 
+      alert(AptitudeTest);
+      var GroupDiscussion=$("#GroupDiscussion:checked").val() ? "Group Discussion" : "Group Discussion";
+      var TechnicalInterview=$("#TechnicalInterview:checked").val() ? "Technical Interview" : "Technical Interview";
+      var HrInterview=$("#HrInterview:checked").val() ? "HrInterview" : "Hr Interview";
+
+      //getting data from server
+      $.post('/companydetails',{Aptitude Test:AptitudeTest,Group Discussion:GroupDiscussion,Technical Interview:TechnicalInterview,Hr Interview:HrInterview}).done(function(data,textStatus,jqXHR){
+      });
+      });
+    script.
+      $(".promote").each(function(){
+        $(this).click(function(){
+          var roll = $(this).val();
+          $.post('/select',{rollno:roll}, function(data,textStatus,jqXHR){
+            //alert(data);
+          });
+
+          $(this).removeClass('btn-info');
+          $(this).addClass('btn-success');
+          $(this).prop('disabled', true);
+          $(this).html('Promoted');
+        });        
+      });
+    script.
+      $(".promote1").each(function(i){
+        $(this).click(function(){
+          var roll = $(this).val();
+          var mark = $("#otmarks"+i).val();
+          $.post('/onlinetest',{rollno:roll, online:mark}, function(data,textStatus,jqXHR){
+          });
+          $(this).removeClass('btn-info');
+          $(this).addClass('btn-success');
+          $(this).prop('disabled', true);
+          $(this).html('Promoted');
+        });
+      });
+    script.
+      $(".promote2").each(function(i){
+        $(this).click(function(){
+          var roll = $(this).val();
+          var mark1 = $("#gdmarks"+i).val();
+          $.post('/groupdiscussion',{rollno:roll, group:mark1}, function(data,textStatus,jqXHR){
+            //alert(data);
+          });
+
+          $(this).removeClass('btn-info');
+          $(this).addClass('btn-success');
+          $(this).prop('disabled', true);
+          $(this).html('Promoted');
+        });
+      });
+    script.
+      $(".promote3").each(function(i){
+        $(this).click(function(){
+          var roll = $(this).val();
+          var mark2 = $("#timarks"+i).val();
+          $.post('/technicalinterview',{rollno:roll, technical:mark2}, function(data,textStatus,jqXHR){
+            //alert(data);
+          });
+
+          $(this).removeClass('btn-info');
+          $(this).addClass('btn-success');
+          $(this).prop('disabled', true);
+          $(this).html('Promoted');
+        });
+      });
+    script.
+      $(".promote4").each(function(i){
+        $(this).click(function(){
+          var roll = $(this).val();
+          var mark3 = $("#fimarks"+i).val();
+          $.post('/finalinterview',{rollno:roll, final:mark3}, function(data,textStatus,jqXHR){
+            //alert(data);
+          });
+
+          $(this).removeClass('btn-info');
+          $(this).addClass('btn-success');
+          $(this).prop('disabled', true);
+          $(this).html('Placed');
+        });
+      });
+
+    // Chart code
+    script.
+      $("#printCollege").html($("#branchStatistics").val());
+      $("#branchStatistics").change(function(e){
+        $("#printCollege").html($("#branchStatistics").val());
+        var col = $(this).val();
+        $.post('/statistics',{College:col}, function(data,textStatus,jqXHR){
+          var jsondata = JSON.stringify(data);
+          //aec
+          var aec_cse_en = 0;
+          var aec_cse_pl = 0;
+          var aec_civil_en = 0;
+          var aec_civil_pl = 0;
+          var aec_mech_en = 0;
+          var aec_mech_pl = 0;
+          var aec_ece_en = 0;
+          var aec_ece_pl = 0;
+          var aec_eee_en = 0;
+          var aec_eee_pl = 0;
+          var aec_it_en = 0;
+          var aec_it_pl = 0;
+          var aec_pt_en = 0;
+          var aec_pt_pl = 0;
+          var aec_ae_en = 0;
+          var aec_ae_pl = 0;
+          var aec_me_en = 0;
+          var aec_me_pl = 0;
+          //acet
+          var acet_cse_en = 0;
+          var acet_cse_pl = 0;
+          var acet_civil_en = 0;
+          var acet_civil_pl = 0;
+          var acet_mech_en = 0;
+          var acet_mech_pl = 0;
+          var acet_ece_en = 0;
+          var acet_ece_pl = 0;
+          var acet_eee_en = 0;
+          var acet_eee_pl = 0;
+          var acet_it_en = 0;
+          var acet_it_pl = 0;
+          var acet_pt_en = 0;
+          var acet_pt_pl = 0;
+          var acet_ae_en = 0;
+          var acet_ae_pl = 0;
+          var acet_me_en = 0;
+          var acet_me_pl = 0;
+          //ace
+          var ace_cse_en = 0;
+          var ace_cse_pl = 0;
+          var ace_civil_en = 0;
+          var ace_civil_pl = 0;
+          var ace_mech_en = 0;
+          var ace_mech_pl = 0;
+          var ace_ece_en = 0;
+          var ace_ece_pl = 0;
+          var ace_eee_en = 0;
+          var ace_eee_pl = 0;
+          var ace_it_en = 0;
+          var ace_it_pl = 0;
+          var ace_pt_en = 0;
+          var ace_pt_pl = 0;
+          var ace_ae_en = 0;
+          var ace_ae_pl = 0;
+          var ace_me_en = 0;
+          var ace_me_pl = 0;
+
+          $.each($.parseJSON(jsondata),function(i,docs){
+
+            //AEC
+            if(docs.college=="AEC" && docs.dept=="CSE"){
+              aec_cse_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="CSE" && docs.status=="Placed"){
+              aec_cse_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="CIVIL"){
+              aec_civil_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="CIVIL" && docs.status=="Placed"){
+              aec_civil_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="MECH"){
+              aec_mech_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="MECH" && docs.status=="Placed"){
+              aec_mech_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="ECE"){
+              aec_ece_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="ECE" && docs.status=="Placed"){
+              aec_ece_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="EEE"){
+              aec_eee_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="EEE" && docs.status=="Placed"){
+              aec_eee_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="IT"){
+              aec_it_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="IT" && docs.status=="Placed"){
+              aec_it_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="PT"){
+              aec_pt_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="PT" && docs.status=="Placed"){
+              aec_pt_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="AE"){
+              aec_ae_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="AE" && docs.status=="Placed"){
+              aec_ae_pl++;
+            }
+            if(docs.college=="AEC" && docs.dept=="ME"){
+              aec_me_en++;
+            }
+            if(docs.college=="AEC" && docs.dept=="ME" && docs.status=="Placed"){
+              aec_me_pl++;
+            }
+            //ACET
+            if(docs.college=="ACET" && docs.dept=="CSE"){
+              acet_cse_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="CSE" && docs.status=="Placed"){
+              acet_cse_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="CIVIL"){
+              acet_civil_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="CIVIL" && docs.status=="Placed"){
+              acet_civil_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="MECH"){
+              acet_mech_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="MECH" && docs.status=="Placed"){
+              acet_mech_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="ECE"){
+              acet_ece_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="ECE" && docs.status=="Placed"){
+              acet_ece_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="EEE"){
+              acet_eee_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="EEE" && docs.status=="Placed"){
+              acet_eee_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="IT"){
+              acet_it_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="IT" && docs.status=="Placed"){
+              acet_it_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="PT"){
+              acet_pt_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="PT" && docs.status=="Placed"){
+              acet_pt_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="AE"){
+              acet_ae_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="AE" && docs.status=="Placed"){
+              acet_ae_pl++;
+            }
+            if(docs.college=="ACET" && docs.dept=="ME"){
+              acet_me_en++;
+            }
+            if(docs.college=="ACET" && docs.dept=="ME" && docs.status=="Placed"){
+              acet_me_pl++;
+            }
+            //ACE
+            if(docs.college=="ACE" && docs.dept=="CSE"){
+              ace_cse_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="CSE" && docs.status=="Placed"){
+              ace_cse_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="CIVIL"){
+              ace_civil_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="CIVIL" && docs.status=="Placed"){
+              ace_civil_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="MECH"){
+              ace_mech_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="MECH" && docs.status=="Placed"){
+              ace_mech_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="ECE"){
+              ace_ece_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="ECE" && docs.status=="Placed"){
+              ace_ece_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="EEE"){
+              ace_eee_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="EEE" && docs.status=="Placed"){
+              ace_eee_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="IT"){
+              ace_it_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="IT" && docs.status=="Placed"){
+              ace_it_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="PT"){
+              ace_pt_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="PT" && docs.status=="Placed"){
+              ace_pt_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="AE"){
+              ace_ae_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="AE" && docs.status=="Placed"){
+              ace_ae_pl++;
+            }
+            if(docs.college=="ACE" && docs.dept=="ME"){
+              ace_me_en++;
+            }
+            if(docs.college=="ACE" && docs.dept=="ME" && docs.status=="Placed"){
+              ace_me_pl++;
+            }
+          });
+
+
+            if(col=="AEC") {
+              var chart = AmCharts.makeChart("chartdiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "marginRight": 70,
+                    "dataProvider": [{
+                    "country": "CSE Applied ",
+                    "visits": aec_cse_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CSE Placed",
+                    "visits": aec_cse_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ECE Applied",
+                    "visits": aec_ece_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ECE Placed",
+                    "visits": aec_ece_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "EEE Applied",
+                    "visits": aec_eee_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "EEE Placed",
+                    "visits": aec_eee_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "IT Applied",
+                    "visits": aec_it_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "IT Placed",
+                    "visits": aec_it_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "MECH Applied",
+                    "visits": aec_mech_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "MECH Placed",
+                    "visits": aec_mech_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "CIVIL Applied",
+                    "visits": aec_civil_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CIVIL Placed",
+                    "visits": aec_civil_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "PT Applied",
+                    "visits": aec_pt_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "PT Placed",
+                    "visits": aec_pt_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "AE Applied",
+                    "visits": aec_ae_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "AE Placed",
+                    "visits": aec_ae_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ME Applied",
+                    "visits": aec_me_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ME Placed",
+                    "visits": aec_me_pl,
+                    "color": "#FFB242"
+                    }],
+                    "valueAxes": [{
+                    "axisAlpha": 0,
+                    "position": "left",
+                    "title": "Branch Statistics"
+                    }],
+                    "startDuration": 1,
+                    "graphs": [{
+                    "balloonText": "<b>[[category]]: [[value]]</b>",
+                    "fillColorsField": "color",
+                    "fillAlphas": 0.9,
+                    "lineAlpha": 0.2,
+                    "type": "column",
+                    "valueField": "visits"
+                    }],
+                    "chartCursor": {
+                    "categoryBalloonEnabled": false,
+                    "cursorAlpha": 0,
+                    "zoomable": false
+                    },
+                    "categoryField": "country",
+                    "categoryAxis": {
+                    "gridPosition": "start",
+                    "labelRotation": 0
+                    },
+                    "export": {
+                    "enabled": true
+                    }
+              });
+            }
+            else if(col=="ACET") {
+              var chart = AmCharts.makeChart("chartdiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "marginRight": 70,
+                    "dataProvider": [{
+                    "country": "CSE Applied ",
+                    "visits": acet_cse_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CSE Placed",
+                    "visits": acet_cse_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ECE Applied",
+                    "visits": acet_ece_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ECE Placed",
+                    "visits": acet_ece_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "EEE Applied",
+                    "visits": acet_eee_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "EEE Placed",
+                    "visits": acet_eee_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "IT Applied",
+                    "visits": acet_it_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "IT Placed",
+                    "visits": acet_it_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "MECH Applied",
+                    "visits": acet_mech_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "MECH Placed",
+                    "visits": acet_mech_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "CIVIL Applied",
+                    "visits": acet_civil_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CIVIL Placed",
+                    "visits": acet_civil_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "PT Applied",
+                    "visits": acet_pt_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "PT Placed",
+                    "visits": acet_pt_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "AE Applied",
+                    "visits": acet_ae_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "AE Placed",
+                    "visits": acet_ae_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ME Applied",
+                    "visits": acet_me_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ME Placed",
+                    "visits": acet_me_pl,
+                    "color": "#FFB242"
+                    }],
+                    "valueAxes": [{
+                    "axisAlpha": 0,
+                    "position": "left",
+                    "title": "Branch Statistics"
+                    }],
+                    "startDuration": 1,
+                    "graphs": [{
+                    "balloonText": "<b>[[category]]: [[value]]</b>",
+                    "fillColorsField": "color",
+                    "fillAlphas": 0.9,
+                    "lineAlpha": 0.2,
+                    "type": "column",
+                    "valueField": "visits"
+                    }],
+                    "chartCursor": {
+                    "categoryBalloonEnabled": false,
+                    "cursorAlpha": 0,
+                    "zoomable": false
+                    },
+                    "categoryField": "country",
+                    "categoryAxis": {
+                    "gridPosition": "start",
+                    "labelRotation": 0
+                    },
+                    "export": {
+                    "enabled": true
+                    }
+              });
+            }
+            else if(col=="ACOE") {
+              var chart = AmCharts.makeChart("chartdiv", {
+                    "type": "serial",
+                    "theme": "light",
+                    "marginRight": 70,
+                    "dataProvider": [{
+                    "country": "CSE Applied ",
+                    "visits": ace_cse_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CSE Placed",
+                    "visits": ace_cse_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ECE Applied",
+                    "visits": ace_ece_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ECE Placed",
+                    "visits": ace_ece_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "EEE Applied",
+                    "visits": ace_eee_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "EEE Placed",
+                    "visits": ace_eee_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "IT Applied",
+                    "visits": ace_it_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "IT Placed",
+                    "visits": ace_it_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "MECH Applied",
+                    "visits": ace_mech_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "MECH Placed",
+                    "visits": ace_mech_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "CIVIL Applied",
+                    "visits": ace_civil_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "CIVIL Placed",
+                    "visits": ace_civil_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "PT Applied",
+                    "visits": ace_pt_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "PT Placed",
+                    "visits": ace_pt_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "AE Applied",
+                    "visits": ace_ae_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "AE Placed",
+                    "visits": ace_ae_pl,
+                    "color": "#FFB242"
+                    }, {
+                    "country": "ME Applied",
+                    "visits": ace_me_en,
+                    "color": "#46BBB4"
+                    }, {
+                    "country": "ME Placed",
+                    "visits": ace_me_pl,
+                    "color": "#FFB242"
+                    }],
+                    "valueAxes": [{
+                    "axisAlpha": 0,
+                    "position": "left",
+                    "title": "Branch Statistics"
+                    }],
+                    "startDuration": 1,
+                    "graphs": [{
+                    "balloonText": "<b>[[category]]: [[value]]</b>",
+                    "fillColorsField": "color",
+                    "fillAlphas": 0.9,
+                    "lineAlpha": 0.2,
+                    "type": "column",
+                    "valueField": "visits"
+                    }],
+                    "chartCursor": {
+                    "categoryBalloonEnabled": false,
+                    "cursorAlpha": 0,
+                    "zoomable": false
+                    },
+                    "categoryField": "country",
+                    "categoryAxis": {
+                    "gridPosition": "start",
+                    "labelRotation": 0
+                    },
+                    "export": {
+                    "enabled": true
+                    }
+              });
+            }
+        
+        });
+      }).trigger('change');
+      
+      //alert(chart.visits);
+      //console.log(chart.visits);
+    script.
+      function select_all(){
+      if (document.getElementById('all_selectons').checked) {
+      document.getElementById('AptitudeTest').checked="true";
+      document.getElementById('GroupDiscussion').checked="true";
+      document.getElementById('TechnicalInterview').checked="true";
+      document.getElementById('HrInterview').checked="true";
+      }
+      else {
+      document.getElementById('AptitudeTest').checked=false;
+      document.getElementById('GroupDiscussion').checked=false;
+      document.getElementById('TechnicalInterview').checked=false;
+      document.getElementById('HrInterview').checked=false;
+      }
+      }
+      
+      function selection_single() {
+      var i = document.getElementById('AptitudeTest');
+      var j = document.getElementById('GroupDiscussion');
+      var k = document.getElementById('TechnicalInterview');
+      var l = document.getElementById('HrInterview');
+      if (i.checked==true && j.checked==true && k.checked==true && l.checked==true) {
+      document.getElementById('all_selectons').checked=true;
+      }
+      else if (i.checked==false || j.checked==false || k.checked==false || l.checked==false) {
+      document.getElementById('all_selectons').checked=false;
+      }
+      }
+      
+      

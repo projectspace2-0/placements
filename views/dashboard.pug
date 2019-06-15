@@ -1,0 +1,521 @@
+doctype html
+html
+  title Dashboard
+  link(type='image/png', href='adityalogo.png', rel='icon')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/css/home.css')
+    // Custom styles for this template
+    link(href='assets/css/style.css', rel='stylesheet')
+    link(href='assets/css/style-responsive.css', rel='stylesheet')
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // external css
+    link(href='assets/font-awesome/css/font-awesome.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    style.
+      body {
+      background-color:#2C3E50;
+      }
+      header {
+      background-color: #2C3E50;
+      border-bottom: 1px solid #fd9f1b;
+      }
+      .navbar h2 {
+      color:#fd9f1b;
+      }
+      .user {
+      font-family:;
+      }
+      .row a {
+      text-decoration: none;
+      color: black;
+      }
+      .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      border: medium none;
+      }
+      .panel-box .panel-icon {
+      display: table-cell;
+      padding: 29px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+      }
+      .dashboard-stats .stat-icon {
+      line-height: 65px;
+      }
+      .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+      }
+      .success-text {
+      color: #82b33a;
+      }
+      .bg-danger {
+      background-color: #FF7857 !important;
+      color: #FFF !important;
+      }
+      .danger-text {
+      color: #d15b3d;
+      }
+      .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #FFF !important;
+      }
+      .lovender-text {
+      color: #6a5fb1;
+      }
+      .bg-info {
+      background-color: #7ACBEE !important;
+      color: #FFF !important;
+      }
+      .info-text {
+      color: #3ca0cb;
+      }
+      .size-h1 {
+      font-size: 20px;
+      }
+      .panel-icon p.text {
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      }
+      .panel-icon i {
+      text-align: center;
+      }
+      .panel-icon i {
+      text-align: center;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      .text-large {
+      font-size: 50px;
+      }
+      .img-circle {
+      width:200px;
+      height:200px;
+      margin-top:0px;
+      border:6px solid lightgrey;
+      }
+      .glyphicon, .fa {
+      font-size: 50px;
+      }
+      .glyphicon-off {
+      font-size: 20px;
+      }
+      .col-lg-12 {
+      color:white;
+      }
+      .panel:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+      }
+      .header .top-menu ul li a {
+      background-color: #2C3E50;
+      border: 1px solid #2C3E50;
+      }
+      .header .top-menu ul li {
+      border-color: 1px solid #2C3E50;
+      }
+
+      .show-overlay, .show-modal{
+        display:block !important;
+        transition: all 0.5s ease 0s;
+
+      }
+
+
+
+      /************ Button ************/
+
+      .button-container{
+        position:relative;
+        margin:0 auto;
+        width:200px;
+        height:150px;
+        top:150px;
+        z-index:1;
+      }
+
+      .blue-button{
+        position:relative;
+        background-color: #FF7857;
+        color:#fff;
+        font-family: "Proxima Nova";
+        font-size:16px;
+        padding:10px;
+        width:5%;
+        cursor:pointer;
+        border-radius: 2px 2px 2px 2px;
+        -moz-border-radius: 2px 2px 2px 2px;
+        -webkit-border-radius: 2px 2px 2px 2px;
+        border: 0px solid #000000;  
+        
+      }
+      
+
+      /************ Modal ************/
+
+      .modal-contain{
+        position:absolute;
+        margin:0 auto;
+        height: auto;
+        width:auto;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border: 0px solid #000000;
+        background-color: #fff;
+        border-left:15px solid #7ACBEE;
+        display:none;
+        z-index:101;
+        left:40%;
+        top:15%;
+        
+        -webkit-box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+        -moz-box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+        box-shadow: -1px 4px 5px 4px rgba(0,0,0,0.51);
+        
+      }
+
+
+      #modal h4{
+        position:relative;
+        padding:35px 25px 5px 25px;
+        font-size:20px;
+        font-weight:100;
+        margin:0;
+        color:#000;
+        width:90%;
+        height: auto;
+        
+      }
+
+
+      #modal p{
+        position:relative;
+        font-size:14px;
+        padding:25px;
+        margin:0;
+        line-height:24px;
+        width:89%;
+        border-top:solid 1px #D1D1D1;
+        height: auto;
+        
+      }
+      .p{
+        position:relative;
+        font-size:14px;
+        padding:25px;
+        margin:0;
+        line-height:24px;
+        width:89%;
+        height: auto;
+      }
+
+      .wrapper12 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .modal-contain button.blue-button{
+        width:100%;
+        margin: 0 0 30px 25px;
+        
+      }
+
+      /************ BounceIn Animation ************/
+
+      .bounceIn-animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      .bounceIn-animated.infinite {
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+      }
+      .bounceIn-animated.hinge {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+      }
+      /*the animation definition*/
+      @-webkit-keyframes bounceInDown {
+       0%, 100%, 60%, 75%, 90% {
+       -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+       transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+      }
+       0% {
+       opacity: 0;
+       -webkit-transform: translate3d(0, -100px, 0);
+       transform: translate3d(0, -100px, 0)
+      }
+       60% {
+       opacity: 1;
+       -webkit-transform: translate3d(0, 10px, 0);
+       transform: translate3d(0, 10px, 0)
+      }
+       75% {
+       -webkit-transform: translate3d(0, -10px, 0);
+       transform: translate3d(0, -10px, 0)
+      }
+       90% {
+       -webkit-transform: translate3d(0, 5px, 0);
+       transform: translate3d(0, 5px, 0)
+      }
+       100% {
+       -webkit-transform: none;
+       transform: none
+      }
+      }
+      @keyframes bounceInDown {
+       0%, 100%, 60%, 75%, 90% {
+       -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+       transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+      }
+       0% {
+       opacity: 0;
+       -webkit-transform: translate3d(0, -100px, 0);
+       -ms-transform: translate3d(0, -100px, 0);
+       transform: translate3d(0, -100px, 0)
+      }
+       60% {
+       opacity: 1;
+       -webkit-transform: translate3d(0, 10px, 0);
+       -ms-transform: translate3d(0, 10px, 0);
+       transform: translate3d(0, 10px, 0)
+      }
+       75% {
+       -webkit-transform: translate3d(0, -10px, 0);
+       -ms-transform: translate3d(0, -10px, 0);
+       transform: translate3d(0, -10px, 0)
+      }
+       90% {
+       -webkit-transform: translate3d(0, 5px, 0);
+       -ms-transform: translate3d(0, 5px, 0);
+       transform: translate3d(0, 5px, 0)
+      }
+       100% {
+       -webkit-transform: none;
+       -ms-transform: none;
+       transform: none
+      }
+      }
+      .bounceInDown {
+        -webkit-animation-name: bounceInDown;
+        animation-name: bounceInDown
+      }
+
+
+      /************ BounceOut Animation ************/
+
+      .bounceOutUp-animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+      /*the animation definition*/
+      @-webkit-keyframes bounceOutUp {
+       20% {
+       -webkit-transform: translate3d(0, -10px, 0);
+       transform: translate3d(0, -10px, 0)
+      }
+       40%,  45% {
+       opacity: 1;
+       -webkit-transform: translate3d(0, 5px, 0);
+       transform: translate3d(0, 5px, 0)
+      }
+       100% {
+       opacity: 0;
+       -webkit-transform: translate3d(0, -100px, 0);
+       transform: translate3d(0, -100px, 0)
+      }
+      }
+      @keyframes bounceOutUp {
+       20% {
+       -webkit-transform: translate3d(0, -10px, 0);
+       -ms-transform: translate3d(0, -10px, 0);
+       transform: translate3d(0, -10px, 0)
+      }
+       40%,  45% {
+       opacity: 1;
+       -webkit-transform: translate3d(0, 5px, 0);
+       -ms-transform: translate3d(0, 5px, 0);
+       transform: translate3d(0, 5px, 0)
+      }
+       100% {
+       opacity: 0;
+       -webkit-transform: translate3d(0, -100px, 0);
+       -ms-transform: translate3d(0, -100px, 0);
+       transform: translate3d(0, -100px, 0)
+      }
+      }
+      .bounceOutUp {
+        -webkit-animation-name: bounceOutUp;
+        animation-name: bounceOutUp
+      }
+      .modal-overlay{
+        position:fixed;
+        background-color: #000;
+        opacity: 0.8;
+        display:none;
+        height:100%;
+        width: 100%;
+        z-index:100;
+        margin:0 auto;
+        padding:0;
+        top:0%;
+        
+      }
+      p a:hover{
+        text-decoration:none;
+      }
+      @media only screen and (min-width: 320px) and (max-width:600px) {
+      .modal-contain{
+        left:0.5%;
+        }
+      }
+
+      
+  body
+    // header start
+    header.header
+      // logo start
+      a.logo(href='')
+        b
+          img(src='myhub_logo.png',style='height:55px;width:100px;margin-top:-13px')
+      // logo end
+      .navbar-custom-menu
+        ul.top-nav.navbar-right
+          // Notification Menu
+          // User Menu
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+              i.fa.fa-user.fa-lg.pull-right(style='margin:10px 10px 0 0; font-size: 2.2em;color: #f2815e;')
+            ul.dropdown-menu.settings-menu(style="margin-top: 35px")
+              li
+                a(onclick='openModal();' style='cursor:pointer')
+                  i.fa.fa-info-circle.fa-lg(style='font-size: 1.3em;')
+                  |  About us
+              li
+                a(href='/help',target='_blank')
+                  i.fa.fa-question.fa-lg(style='font-size: 1.3em;')
+                  |  Help
+              li
+                a(href='/change')
+                  i.fa.fa-cog.fa-lg(style='font-size: 1.3em;')
+                  |  Settings
+              li
+                a(href='/logout')
+                  i.fa.fa-sign-out.fa-lg(style='font-size: 1.3em;')
+                  |  Logout
+
+    // header end
+    // CONTENT
+    div
+      br
+      br
+      br
+      br
+      //- .col-lg-12.col-sm-6.text-center.user
+      //-   center
+      //-     if !user.profilepic
+      //-       img.img-circle.img-responsive.img-center(src="profilepics/" +user.rollno+ ".jpg", alt='user')
+      //-     else
+      //-       img.img-circle.img-responsive.img-center(src='img/user.jpg', alt='user')
+      //-   h3
+      //-     p #{user.rollno}
+      //-     p #{user.name}
+      //-     p #{user.dept}
+      //- br
+      center
+        .row.dashboard-stats.container
+          .col-md-3.col-sm-6
+            a(href='/mydata')
+              section.panel.panel-box
+                .panel-left.panel-icon.bg-success
+                  span.glyphicon.glyphicon-user
+                .panel-right.panel-icon.bg-reverse
+                  p.text-muted.no-margin.text
+                    span My
+                  p.size-h1 Data
+          .col-md-3.col-sm-6
+            a(href='/myprofile')
+              section.panel.panel-box
+                .panel-left.panel-icon(style='background-color:#DCAB88;')
+                  span.glyphicon.glyphicon-ok-circle(style='color:white;')
+                .panel-right.panel-icon.bg-reverse
+                  p.text-muted.no-margin.text
+                    span My
+                  p.size-h1 Profile
+          .col-md-3.col-sm-6
+            a(href='/myplacements')
+              section.panel.panel-box
+                .panel-left.panel-icon.bg-lovender
+                  i.fa.fa-building-o
+                .panel-right.panel-icon.bg-reverse
+                  p.text-muted.no-margin.text
+                    span My
+                  p.size-h1 Company
+          .col-md-3.col-sm-6
+            a(href='/mycalendar')
+              section.panel.panel-box
+                .panel-left.panel-icon.bg-info
+                  span.glyphicon.glyphicon-education
+                .panel-right.panel-icon.bg-reverse
+                  p.text-muted.no-margin.text
+                    span My
+                  p.size-h1 Calendar
+          .col-md-3.col-sm-6
+            a(href='/campusnews')
+              section.panel.panel-box
+                .panel-left.panel-icon.bg-primary
+                  span.glyphicon.glyphicon-list
+                .panel-right.panel-icon.bg-reverse
+                  p.text-muted.no-margin.text
+                    span My
+                  p.size-h1 News
+#modal-overlay.modal-overlay.col-xs-12.col-md-6
+#modal.modal-contain
+  h4
+    img(src='icons/myhub_logo.png',style='color:#0C79C9;width:15% margin-right:10px;', aria-hidden='true')
+    | &nbsp;myHUB
+  p
+    | Version 1.0 (Official)
+    br
+    | Release Date: 01-08-2017
+    br
+    br
+    a(href='/help',target='_blank',style='color:#000;')
+      |  Get help with myHUB
+    br
+    a(href='mailto:myhub.helpline@aditya.ac.in?subject=Issue%20regarding%20myHUB',target='_top',style='color:#000;')
+      |  Report an Issue
+    br
+    br
+    | &copy; Aditya Group of Instituions. All rights reserved. 
+    | 
+  button.blue-button(onclick='closeModal();',style='width:60px;height:38px;float:right;margin-right:10%') Ok
+  #powered(style='float:right;margin-left:70%;margin-bottom:4%;margin-top:-4%')
+    |  Powered by 
+    img(src='icons/T-Hub_logo.png',style='width:25%')
+  // //CONTENT
+  script(src='js/preventcontrol.js')
+  script(src='javascripts/jquery.statusbar.js', type='text/javascript')
